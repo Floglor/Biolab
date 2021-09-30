@@ -60,8 +60,8 @@ public class TopDown2DCameraController : MonoBehaviour
     {
         if (_camera.transform.position.y + move.y > 25) return true;
         if (_camera.transform.position.y + move.y < -25) return true;
-        if (_camera.transform.position.x + move.y > 25) return true;
-        if (_camera.transform.position.x + move.y < -25) return true;
+        if (_camera.transform.position.x + move.x > 25) return true;
+        if (_camera.transform.position.x + move.x < -25) return true;
         return false;
     }
 }
