@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="89c1b086-2123-4b3d-98a5-eced6682d0c9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ai/FoodDecision.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatureSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EF151B6A-BB5D-474C-B2C1-CB8906A8B5A4/71/5ef7ce4d/Socket.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@1.1.4/Rider/Editor/LoggingLevel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/49/9bdff482/EncodingTable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/12/fc1f64cf/Monitor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CanvasController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatureList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE7EE188-1B52-4B0D-9443-F74417FB598B/d6/621c795c/GUIUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/77/7e2ff439/MonoMethod.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AFA5B9A1-7934-46FF-98B7-41DC036C4C6E/47/cb083b5a/HostView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17AD9609-AE06-4F2C-9315-931FF97ADCF1/db/83edc468/Mesh.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/44CFCFAE-157E-424B-A013-48DCFEBB2066/4d/e3da1e3a/Tile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17AD9609-AE06-4F2C-9315-931FF97ADCF1/19/96a8ba90/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17AD9609-AE06-4F2C-9315-931FF97ADCF1/76/9f6d6b0d/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/44CFCFAE-157E-424B-A013-48DCFEBB2066/e6/860f7b5d/TileBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/IconLibrary.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ai/Eat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/2a/0d72e35c/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ai/CheckIfThirstSatisfied.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/17AD9609-AE06-4F2C-9315-931FF97ADCF1/73/9a77b01f/UnityEvent`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ai/State.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ai/IfHungerSatisfied.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ai/CheckIfMoving.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/17AD9609-AE06-4F2C-9315-931FF97ADCF1/4b/49ad8cca/Resolution.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomTile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ai/DrinkAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ai/Transition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17AD9609-AE06-4F2C-9315-931FF97ADCF1/53/7949224f/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17AD9609-AE06-4F2C-9315-931FF97ADCF1/78/2fc1b842/Color.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ai/RunInCirles.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/06B52E9A-9966-4909-A152-2344E6AC3FEC/59/01afbf4a/GridLayout.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bunny.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TilemapExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomWaterTile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AFA5B9A1-7934-46FF-98B7-41DC036C4C6E/f9/c82b1861/EditorCompilation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06214B24-5DBB-4D10-A9CE-FD10639BB04E/63/ef319cfa/IMGUIContainer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GoForFoodAction.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/StartRunningAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/StartRunning.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/IfThirstCriticalDecision.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/StopRunningAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/KillAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/RunInCirles.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/FoodDecisionCarnivore.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/DefaultIconHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ClosestWaterScanner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/FindClosestHerbivore.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/Eat.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/UnhideAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Corpse.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DefaultAwarenessBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/RunInOppositeDirectionOfDangerAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CarnivoresEatingBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CorpseSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatureList.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomWaterTile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DefaultEatingBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GlobalValues.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RVOMovingBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WaterController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/General/Timer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GlobalNeedsDecay.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomTile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FoodController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Modern UI Pack/Scripts/Dropdown/CustomDropdown.cs" />
+        <option value="$PROJECT_DIR$/Assets/SettingsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/CreatureInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameConfigValues.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/MainMenuInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/GameConfigController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ReducedBreedFactorNeedsDecay.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/kekwait.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/TimersHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/CanvasController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/HuntDecision.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DefaultRepeatMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/CheckIfCloseToAnotherCreature.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/CheckIfPartnerIsStillInterested.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/ClearTargetsAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DefaultCreatureSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatureSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/State.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/StateController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DefaultMateSeeker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ai/SeekMateAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/NeedsUIHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creature.cs" />
+        <option value="$PROJECT_DIR$/Assets/TopDown2DCameraController.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1qfadgJTAMSKx3OnQxDeLsvpEfY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.353355" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.3024892" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="Inspections-C#" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../Documents/New Unity Project/TestBuild\New Unity Project.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Floggy\Documents\New Unity Project\TestBuild" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="743" y="387" key="#Code_Cleanup_Options" timestamp="1632233732867">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="743" y="387" key="#Code_Cleanup_Options/0.0.1920.1080@0.0.1920.1080" timestamp="1632233732867" />
+    <state x="730" y="403" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1632240754228">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="730" y="403" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1080@0.0.1920.1080" timestamp="1632240754228" />
+    <state width="1879" height="388" key="GridCell.Tab.0.bottom" timestamp="1632630800095">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800095" />
+    <state width="1879" height="388" key="GridCell.Tab.0.center" timestamp="1632630800095">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800095" />
+    <state width="1879" height="388" key="GridCell.Tab.0.left" timestamp="1632630800095">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800095" />
+    <state width="1879" height="388" key="GridCell.Tab.0.right" timestamp="1632630800095">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800095" />
+    <state width="1879" height="388" key="GridCell.Tab.1.bottom" timestamp="1632630800095">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800095" />
+    <state width="1879" height="388" key="GridCell.Tab.1.center" timestamp="1632630800095">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800095" />
+    <state width="1879" height="388" key="GridCell.Tab.1.left" timestamp="1632630800095">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800095" />
+    <state width="1879" height="388" key="GridCell.Tab.1.right" timestamp="1632630800095">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800095" />
+    <state width="1879" height="388" key="GridCell.Tab.2.bottom" timestamp="1632630800095">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.2.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800095" />
+    <state width="1879" height="388" key="GridCell.Tab.2.center" timestamp="1632630800095">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.2.center/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800095" />
+    <state width="1879" height="388" key="GridCell.Tab.2.left" timestamp="1632630800095">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.2.left/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800095" />
+    <state width="1879" height="388" key="GridCell.Tab.2.right" timestamp="1632630800095">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.2.right/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800095" />
+    <state width="1879" height="388" key="GridCell.Tab.3.bottom" timestamp="1632630800096">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.3.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800096" />
+    <state width="1879" height="388" key="GridCell.Tab.3.center" timestamp="1632630800096">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.3.center/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800096" />
+    <state width="1879" height="388" key="GridCell.Tab.3.left" timestamp="1632630800096">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.3.left/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800096" />
+    <state width="1879" height="388" key="GridCell.Tab.3.right" timestamp="1632630800096">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1879" height="388" key="GridCell.Tab.3.right/0.0.1920.1080@0.0.1920.1080" timestamp="1632630800096" />
+    <state x="853" y="267" key="RiderGenerateDialog" timestamp="1632820790461">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="853" y="267" key="RiderGenerateDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1632820790461" />
+    <state x="483" y="186" key="SettingsEditor" timestamp="1632453225436">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="483" y="186" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1632453225436" />
+    <state x="536" y="270" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1631363808563">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="536" y="270" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1080@0.0.1920.1080" timestamp="1631363808563" />
+    <state x="590" y="280" width="740" height="598" key="find.popup" timestamp="1632629514238">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="590" y="280" width="740" height="598" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1632629514238" />
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1632832019024">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1632832019024" />
+  </component>
+</project>
