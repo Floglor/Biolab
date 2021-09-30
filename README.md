@@ -4,7 +4,7 @@ A small proof of concept
 This is a project I created for my resume. It's a small AI-driven proof of concept with zero to no input from a player. 
 Please be aware that I highly recommend reviewing this as a solution inside Unity, but feel free to download a build if you want to. 
 
-Controls - RMB to navigate around the map and Scroll to zoom in or out. 
+Controls - LMB to navigate around the map and Scroll to zoom in or out. 
 
 Warning: the graphics are almost non-existing and extremely raw. It's not a complete game and even not an alpha. 
 NOTE THAT YOU SHOULD NOT LET THIS GAME BE PLAYED FOR FAR TOO LONG ON A WEAK PC. CREATURES WILL SPAWN TO THE LIMIT AND THE PATHFINDER WILL BE HARD ON YOUR CPU.
