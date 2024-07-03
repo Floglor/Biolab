@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
 
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.Switch
 {
     public class SwitchManager : MonoBehaviour
     {
@@ -19,14 +18,14 @@ namespace Michsky.UI.ModernUIPack
         public bool invokeAtStart = true;
 
         Animator switchAnimator;
-        Button switchButton;
+        UnityEngine.UI.Button switchButton;
 
         void Start()
         {
             try
             {
                 switchAnimator = gameObject.GetComponent<Animator>();
-                switchButton = gameObject.GetComponent<Button>();
+                switchButton = gameObject.GetComponent<UnityEngine.UI.Button>();
                 switchButton.onClick.AddListener(AnimateSwitch);
             }
 

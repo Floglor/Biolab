@@ -1,10 +1,9 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.Notification
 {
     public class NotificationManager : MonoBehaviour
     {

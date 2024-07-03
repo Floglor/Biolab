@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.Demo
 {
     public class LaunchURL : MonoBehaviour
     {

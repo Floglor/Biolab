@@ -1,15 +1,14 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using TMPro;
 
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.Slider
 {
     public class SliderManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         // Resources
-        public Slider mainSlider;
+        public UnityEngine.UI.Slider mainSlider;
         public TextMeshProUGUI valueText;
         public TextMeshProUGUI popupValueText;
 

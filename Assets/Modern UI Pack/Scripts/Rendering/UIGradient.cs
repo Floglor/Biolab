@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
-namespace UnityEngine.UI
+namespace Modern_UI_Pack.Scripts.Rendering
 {
     namespace Michsky.UI.ModernUIPack
     {

@@ -1,12 +1,11 @@
-﻿using UnityEngine;
-#if UNITY_EDITOR
+﻿using System;
 using UnityEditor;
-#endif
-using System;
 using UnityEngine.UI;
+#if UNITY_EDITOR
+#endif
 
 #if UNITY_EDITOR
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.UI_Manager
 {
     [CustomEditor(typeof(UIManagerProgressBarLoop))]
     public class UIManagerProgressBarLoopEditor : Editor

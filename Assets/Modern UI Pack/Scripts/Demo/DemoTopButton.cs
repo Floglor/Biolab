@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.Demo
 {
     public class DemoTopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {

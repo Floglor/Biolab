@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using TMPro;
+using UnityEngine.UI;
 
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.Dropdown
 {
     public class DropdownMultiSelect : MonoBehaviour
     {
@@ -111,8 +110,8 @@ namespace Michsky.UI.ModernUIPack
                 textHelper = dropdownItems[i].itemName;
                 setItemText.text = textHelper;
 
-                Toggle itemToggle;
-                itemToggle = go.GetComponent<Toggle>();
+                UnityEngine.UI.Toggle itemToggle;
+                itemToggle = go.GetComponent<UnityEngine.UI.Toggle>();
 
                 iHelper = i;
 

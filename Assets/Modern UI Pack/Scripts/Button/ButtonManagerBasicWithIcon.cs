@@ -1,10 +1,10 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.Button
 {
     public class ButtonManagerBasicWithIcon : MonoBehaviour, IPointerEnterHandler
     {
@@ -14,7 +14,7 @@ namespace Michsky.UI.ModernUIPack
         public UnityEvent buttonEvent;
         public AudioClip hoverSound;
         public AudioClip clickSound;
-        Button buttonVar;
+        UnityEngine.UI.Button buttonVar;
 
         // Resources
         public Image normalImage;
@@ -36,7 +36,7 @@ namespace Michsky.UI.ModernUIPack
             }
 
             if (buttonVar == null)
-                buttonVar = gameObject.GetComponent<Button>();
+                buttonVar = gameObject.GetComponent<UnityEngine.UI.Button>();
 
             buttonVar.onClick.AddListener(delegate
             {

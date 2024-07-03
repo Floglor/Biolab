@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.Window
 {
     public class WindowDragger : UIBehaviour, IBeginDragHandler, IDragHandler
     {

@@ -1,10 +1,9 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+﻿using TMPro;
+using UnityEngine;
 
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.Slider
 {
-    public class RangeMaxSlider : Slider
+    public class RangeMaxSlider : UnityEngine.UI.Slider
     {
         public RangeMinSlider minSlider;
         public TextMeshProUGUI label;

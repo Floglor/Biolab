@@ -1,5 +1,4 @@
 ﻿using Ai;
-using DefaultNamespace;
 using Pathfinding;
 using Pathfinding.RVO;
 using Sirenix.OdinInspector;
@@ -83,7 +82,6 @@ public class Creature : MonoBehaviour
 
     protected void Start()
     {
-        stateController = GetComponent<StateController>();
         aiPath = GetComponent<AIPath>();
         seeker = GetComponent<Seeker>();
         EatingBehaviour = GetComponent<IEatingBehaviour>();
@@ -92,6 +90,7 @@ public class Creature : MonoBehaviour
         MovingBehaviour = GetComponent<IMovingBehaviour>();
         RepeatMoveBehaviour = GetComponent<IRepeatMove>();
         _needsUI = GetComponent<INeedsUI>();
+        stateController = GetComponent<StateController>();
 
         InitializeStartingStats();
         aiPath.maxSpeed = Speed;

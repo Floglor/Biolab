@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-#if UNITY_EDITOR
+﻿#if UNITY_EDITOR
 using UnityEditor;
+using UnityEngine;
 
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.Modal_Window
 {
     [CustomEditor(typeof(ModalWindowManager))]
     [System.Serializable]

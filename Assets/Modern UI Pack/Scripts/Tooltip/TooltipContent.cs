@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.EventSystems;
-using TMPro;
 
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.Tooltip
 {
     public class TooltipContent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {

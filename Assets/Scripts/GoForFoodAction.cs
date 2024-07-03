@@ -1,4 +1,5 @@
 ﻿using Ai;
+using Ai.Actions;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "PluggableAI/Actions/GoForFoodAction")]

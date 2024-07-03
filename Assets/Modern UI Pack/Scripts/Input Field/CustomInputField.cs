@@ -1,9 +1,8 @@
-﻿using System.Collections;
+﻿using TMPro;
 using UnityEngine;
-using TMPro;
 using UnityEngine.EventSystems;
 
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.Input_Field
 {
     public class CustomInputField : MonoBehaviour, IPointerClickHandler
     {

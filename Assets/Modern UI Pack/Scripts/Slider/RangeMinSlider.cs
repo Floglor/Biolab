@@ -1,10 +1,9 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+﻿using TMPro;
+using UnityEngine;
 
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.Slider
 {
-    public class RangeMinSlider : Slider
+    public class RangeMinSlider : UnityEngine.UI.Slider
     {
         [Header("RESOURCES")]
         public RangeMaxSlider maxSlider;

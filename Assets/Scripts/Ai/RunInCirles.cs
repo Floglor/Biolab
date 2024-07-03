@@ -1,4 +1,6 @@
-﻿using Pathfinding;
+﻿using Ai.Infrastructure;
+using Infrastructure;
+using Pathfinding;
 using UnityEngine;
 
 // ReSharper disable Unity.PerformanceCriticalCodeInvocation

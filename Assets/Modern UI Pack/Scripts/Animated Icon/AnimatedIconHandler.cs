@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-namespace Michsky.UI.ModernUIPack
+namespace Modern_UI_Pack.Scripts.Animated_Icon
 {
     public class AnimatedIconHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
@@ -10,7 +9,7 @@ namespace Michsky.UI.ModernUIPack
         public PlayType playType;
 
         Animator iconAnimator;
-        Button eventButton;
+        UnityEngine.UI.Button eventButton;
         bool isClicked;
 
         public enum PlayType
@@ -25,7 +24,7 @@ namespace Michsky.UI.ModernUIPack
 
             if (playType == PlayType.CLICK)
             {
-                eventButton = gameObject.GetComponent<Button>();
+                eventButton = gameObject.GetComponent<UnityEngine.UI.Button>();
                 eventButton.onClick.AddListener(ClickEvent);
             }
         }
