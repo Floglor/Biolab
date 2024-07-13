@@ -9,7 +9,9 @@ namespace General
         public readonly TimerName TimerName;
         private float _timeRemaining;
         public bool TimerIsRunning;
-
+        public bool TimerReset = true;
+        
+        
         public Timer(TimerName name, float duration)
         {
             _duration = duration;

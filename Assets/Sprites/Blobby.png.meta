@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 15
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,7 +99,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blobby_0
+      name: blackblobby_0
       rect:
         serializedVersion: 2
         x: 0
@@ -113,14 +113,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 733bebc6e215ac990800000000000000
-      internalID: -7364984980776242377
+      spriteID: 45aeacb498d15ca20800000000000000
+      internalID: 3081901995524287060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blobby_1
+      name: blackblobby_1
       rect:
         serializedVersion: 2
         x: 18
@@ -134,14 +134,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2f7b3148ae68a850800000000000000
-      internalID: 6388477740353027883
+      spriteID: 50eef902daf184950800000000000000
+      internalID: 6433426896135908869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blobby_2
+      name: blackblobby_2
       rect:
         serializedVersion: 2
         x: 36
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2abbcec1d0c23eec0800000000000000
-      internalID: -3538936447351604318
+      spriteID: e279f46f36a2fab20800000000000000
+      internalID: 3147781273377806126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blobby_3
+      name: blackblobby_3
       rect:
         serializedVersion: 2
         x: 54
@@ -176,8 +176,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee092fff044c4bdb0800000000000000
-      internalID: -4776977521282215698
+      spriteID: 3425cf974dde3d190800000000000000
+      internalID: -7938740221288623549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackblobby_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a3c85d0d650bcf30800000000000000
+      internalID: 4596773810595218342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blackblobby_5
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6b7374837ffb8da0800000000000000
+      internalID: -5941374411776754833
       vertices: []
       indices: 
       edges: []

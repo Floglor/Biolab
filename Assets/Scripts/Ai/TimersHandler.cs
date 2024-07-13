@@ -12,7 +12,8 @@ namespace Ai
         Awareness,
         CalmDownTimer,
         RunAway,
-        PartnerInterested
+        PartnerInterested,
+        Waiting
     }
 
     public class TimersHandler : MonoBehaviour

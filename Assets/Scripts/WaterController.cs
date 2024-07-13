@@ -6,6 +6,7 @@ public class WaterController : MonoBehaviour
 {
     public static WaterController Instance;
     public Sprite waterSprite;
+    public List<Sprite> WaterSprites;
     private Tilemap _waterTilemap;
     public IWaterScanner WaterScanner;
     public List<CustomWaterTile> WaterTiles;
@@ -29,7 +30,17 @@ public class WaterController : MonoBehaviour
             if (!_waterTilemap.HasTile(cellPosition)) continue;
 
             Tile tile = _waterTilemap.GetTile<Tile>(cellPosition);
-            if (tile.sprite != waterSprite) continue;
+
+            bool isWaterFlag = false;
+            
+            foreach (Sprite sprite in WaterSprites)
+            {
+                if (tile.sprite == sprite) isWaterFlag = true;
+            }
+            
+            if (!isWaterFlag) continue;
+            
+            //if (tile.sprite != waterSprite) continue;
             PrepareAndAddWaterTile(tile, cellPosition);
         }
     }

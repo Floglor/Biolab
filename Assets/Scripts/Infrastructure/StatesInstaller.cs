@@ -1,4 +1,5 @@
 ﻿using Ai;
+using Ai.Infrastructure;
 using Zenject;
 
 namespace Infrastructure
