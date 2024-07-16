@@ -1,9 +1,11 @@
-﻿using Ai;
+﻿using System;
+using Ai;
 using Pathfinding;
 using Pathfinding.RVO;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class Creature : MonoBehaviour
 {
@@ -46,6 +48,8 @@ public class Creature : MonoBehaviour
     public Seeker seeker;
     public Vector3 lastFoodPosition;
     public Vector3 lastWaterPosition;
+
+    public Action onDrinkingFinsihed;
 
     public StateController stateController;
     public bool alreadyEating;

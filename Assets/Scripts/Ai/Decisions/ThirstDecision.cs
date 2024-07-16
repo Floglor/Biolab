@@ -23,8 +23,10 @@ namespace Ai.Decisions
                 controller.actingCreature.transform.position,
                 controller.actingCreature.eyesight, WaterController.Instance.WaterTiles);
 
-
             if (waterTile == null) return false;
+            
+            waterTile.AddCreature(controller.actingCreature);
+            
 
             controller.actingCreature.lastWaterPosition = waterTile.WorldPosition;
 

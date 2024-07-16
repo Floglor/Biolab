@@ -28,6 +28,8 @@ public class CarnivoresEatingBehaviour : MonoBehaviour, IEatingBehaviour
     {
         if (_gulpCoroutine != null)
             StopCoroutine(_gulpCoroutine);
+        
+        creature.onDrinkingFinsihed.Invoke();
         creature.alreadyDrinking = false;
     }
 
@@ -63,11 +65,11 @@ public class CarnivoresEatingBehaviour : MonoBehaviour, IEatingBehaviour
                 creature.hunger >= 2f)
             {
                 creature.hunger -= Creature.ChompSize;
-                yield return new WaitForSeconds(creature.eatingSpeed / Time.timeScale);
+                yield return new WaitForSeconds(1/creature.eatingSpeed / Time.timeScale);
             }
             else
             {
-                yield return new WaitForSeconds(creature.eatingSpeed / Time.timeScale);
+                yield return new WaitForSeconds(1/creature.eatingSpeed / Time.timeScale);
                 CancelEating(creature);
                 ReturnToFoodSearch(creature);
                 break;

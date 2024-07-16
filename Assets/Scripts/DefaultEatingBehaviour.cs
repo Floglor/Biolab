@@ -68,11 +68,11 @@ public class DefaultEatingBehaviour : MonoBehaviour, IEatingBehaviour
             if (creature.thirst >= 2f)
             {
                 creature.thirst -= Creature.ChompSize;
-                yield return new WaitForSeconds(creature.eatingSpeed / Time.timeScale);
+                yield return new WaitForSeconds(1/creature.eatingSpeed / Time.timeScale);
             }
             else
             {
-                yield return new WaitForSeconds(creature.eatingSpeed / Time.timeScale);
+                yield return new WaitForSeconds(1/creature.eatingSpeed / Time.timeScale);
                 CancelDrinking(creature);
                 break;
             }
