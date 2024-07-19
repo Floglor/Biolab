@@ -27,6 +27,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="settings.editor.selected.configurable" value="RiderCSharpLiveTemplatesSettingsId" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
@@ -47,10 +48,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="45920">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="45920" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -68,12 +69,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Scroll2D.cs</url>
-          <line>31</line>
-          <properties documentPath="C:\Biolab\Assets\Scripts\UI\TopDown2DCameraController.cs" initialLine="36" containingFunctionPresentation="method 'ScrollUpdate'" />
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/Assets/Scripts/FoodController.cs</url>
+          <line>45</line>
+          <properties documentPath="C:\Biolab\Assets\Scripts\FoodController.cs" initialLine="45" containingFunctionPresentation="method 'GetFoodTile'">
+            <startOffsets>
+              <option value="973" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1018" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#System.Collections.Generic.List`1" memberName="_items" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

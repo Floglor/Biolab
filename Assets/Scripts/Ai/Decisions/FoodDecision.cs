@@ -22,7 +22,11 @@ namespace Ai.Decisions
 
             foodTile = FoodController.Instance.ScanForFood(controller.actingCreature.transform.position);
 
-            if (foodTile == null) return false;
+            if (foodTile == null)
+            {
+                Debug.Log("Can't find food!");
+                return false;
+            }
 
             controller.actingCreature.lastFoodPosition = foodTile.WorldPosition;
             controller.actingCreature.LastFoodTile = foodTile;

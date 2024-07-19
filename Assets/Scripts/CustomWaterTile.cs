@@ -66,9 +66,9 @@ internal class TileSlots
     {
         for (int i = 0; i < _drinkingCreatures.Length; i++)
         {
-            if (_drinkingCreatures[i] == creature)
-                _drinkingCreatures[i] = null;
-
+            if (_drinkingCreatures[i] != creature) continue;
+            
+            _drinkingCreatures[i] = null;
             break;
         }
     }
@@ -93,7 +93,6 @@ internal class TileSlots
             }
         }
 
-        Debug.Log(noFreeSlots);
         return noFreeSlots;
     }
 

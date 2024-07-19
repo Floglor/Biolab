@@ -399,7 +399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speciesID: bnnuy
   creatureType: 1
-  startHunger: 1
+  startHunger: 10
   hunger: 0
   maxHunger: 0
   startThirst: 1

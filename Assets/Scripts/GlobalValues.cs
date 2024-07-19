@@ -1,4 +1,5 @@
 ﻿using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 
 public class GlobalValues : MonoBehaviour
@@ -43,6 +44,7 @@ public class GlobalValues : MonoBehaviour
     [BoxGroup("Other")] public int MaxCreaturesOnTile;
 
     public GameObject debugObj;
+
 
 
     private void Awake()

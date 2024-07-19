@@ -11,12 +11,15 @@ public class FoodController : MonoBehaviour
     public float updateFoodTimer;
 
     public List<Corpse> corpses;
+    
+    public List<Sprite> FoodSprites;
 
     private Tilemap _foodTilemap;
     private List<CustomTile> _foodTiles;
     private TilemapRenderer _tilemapRenderer;
     private float _updateFoodRealTimer;
 
+    
     private void Awake()
     {
         Instance = this;
@@ -33,12 +36,22 @@ public class FoodController : MonoBehaviour
         PrepareFoodTiles();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         UpdateFood();
     }
 
+    public CustomTile GetFoodTile(Vector3 worldPosition)
+    {
+        foreach (CustomTile customTile in _foodTiles)
+        {
+            if (customTile.WorldPosition.Equals(worldPosition)) 
+                return customTile;
+        }
+
+        return null;
+    }
+    
     public CustomTile ScanForFood(Vector3 position)
     {
         CustomTile closestCustomTile = null;
@@ -89,15 +102,17 @@ public class FoodController : MonoBehaviour
             if (!_foodTilemap.HasTile(cellPosition)) continue;
 
             Tile tile = _foodTilemap.GetTile<Tile>(cellPosition);
+            
+            CreateFoodTileAndAdd(tile, cellPosition, FoodTier.Tier100);
 
-            if (tile.sprite == GlobalValues.Instance.emptyFoodSprite) continue;
-
-            if (tile.sprite == GlobalValues.Instance.fullFoodSprite)
-                CreateFoodTileAndAdd(tile, cellPosition, FoodTier.Tier100);
-            else if (tile.sprite == GlobalValues.Instance.halfFoodSprite)
-                CreateFoodTileAndAdd(tile, cellPosition, FoodTier.Tier50);
-            else if (tile.sprite == GlobalValues.Instance.quarterFoodSprite)
-                CreateFoodTileAndAdd(tile, cellPosition, FoodTier.Tier25);
+          //  if (tile.sprite == GlobalValues.Instance.emptyFoodSprite) continue;
+//
+          //  if (tile.sprite == GlobalValues.Instance.fullFoodSprite)
+          //      CreateFoodTileAndAdd(tile, cellPosition, FoodTier.Tier100);
+          //  else if (tile.sprite == GlobalValues.Instance.halfFoodSprite)
+          //      CreateFoodTileAndAdd(tile, cellPosition, FoodTier.Tier50);
+          //  else if (tile.sprite == GlobalValues.Instance.quarterFoodSprite)
+          //      CreateFoodTileAndAdd(tile, cellPosition, FoodTier.Tier25);
         }
     }
 
