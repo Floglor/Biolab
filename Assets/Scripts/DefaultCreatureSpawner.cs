@@ -10,7 +10,7 @@ public class DefaultCreatureSpawner : MonoBehaviour, IMatingCreateNewCreature
         child.startSize = FindStatWithMutation(mother.startSize, father.startSize, mutationModifier);
         child.startEatingSpeed =
             FindStatWithMutation(mother.startEatingSpeed, father.startEatingSpeed, mutationModifier);
-        child.startSpeed = FindStatWithMutation(mother.startSpeed, father.startSpeed, mutationModifier);
+        //child.Speed = FindStatWithMutation(mother.startSpeed, father.startSpeed, mutationModifier);
         child.isMale = Random.Range(0f, 1f) >= 0.5;
     }
 

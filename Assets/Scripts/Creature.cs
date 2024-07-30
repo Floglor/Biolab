@@ -3,6 +3,7 @@ using Ai;
 using Pathfinding;
 using Pathfinding.RVO;
 using Sirenix.OdinInspector;
+using Stats;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -27,8 +28,7 @@ public class Creature : MonoBehaviour
 
     public float startReproductionNeed;
     public float reproductionNeed;
-
-    public float startSpeed;
+    
 
     public float startEyesight;
     public float eyesight;
@@ -73,6 +73,7 @@ public class Creature : MonoBehaviour
     public CustomTile LastFoodTile;
     public IMovingBehaviour MovingBehaviour;
     public IRepeatMove RepeatMoveBehaviour;
+    private GOStatContainer _statContainer;
 
     public float Speed
     {
@@ -86,6 +87,7 @@ public class Creature : MonoBehaviour
 
     protected void Start()
     {
+        _statContainer = GetComponent<GOStatContainer>();
         aiPath = GetComponent<AIPath>();
         seeker = GetComponent<Seeker>();
         EatingBehaviour = GetComponent<IEatingBehaviour>();
@@ -135,8 +137,10 @@ public class Creature : MonoBehaviour
 
     private void InitializeStartingStats()
     {
+        Speed = _statContainer.GetStat(GeneStat.Speed);
+        
         CreatureList.Instance.allCreatures.Add(this);
-        Speed = startSpeed;
+        Speed = _statContainer.GetStat(GeneStat.Speed);
         eyesight = startEyesight;
         hunger = startHunger + Random.Range(5f, 10f);
         thirst = startThirst + Random.Range(5f, 10f);
@@ -187,6 +191,6 @@ public class Creature : MonoBehaviour
     {
         if (!isRunning) return;
         isRunning = false;
-        Speed = startSpeed;
+        Speed = _statContainer.GetStat(GeneStat.Speed);
     }
 }
