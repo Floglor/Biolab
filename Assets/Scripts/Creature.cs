@@ -137,8 +137,6 @@ public class Creature : MonoBehaviour
 
     private void InitializeStartingStats()
     {
-        Speed = _statContainer.GetStat(GeneStat.Speed);
-        
         CreatureList.Instance.allCreatures.Add(this);
         Speed = _statContainer.GetStat(GeneStat.Speed);
         eyesight = startEyesight;

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
+using Stats.Genetics;
 using UnityEngine;
 
 namespace Stats
 {
     public class GOStatContainer : MonoBehaviour
     {
-        [SerializeField] private ChromosomeStats chromosomeStats; 
+        [SerializeField] private GeneticAlgorithm geneticAlgorithm; 
 
         private Dictionary<GeneStat, float> _localStats;
         private Dictionary<GeneStat, float> _originalStats;
@@ -26,12 +27,11 @@ namespace Stats
         }
         private void Initialize()
         {
-            _localStats = new Dictionary<GeneStat, float>(chromosomeStats.StatsDictionary);
-            _originalStats = new Dictionary<GeneStat, float>(chromosomeStats.StatsDictionary);
-            
+            _localStats = geneticAlgorithm.GeneStats;
+            _originalStats = new Dictionary<GeneStat, float>(geneticAlgorithm.GeneStats);
         }
 
-        private void Awake()
+        private void Start()
         {
             Initialize();
         }

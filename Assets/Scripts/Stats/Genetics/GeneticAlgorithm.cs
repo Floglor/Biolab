@@ -30,6 +30,15 @@ namespace Stats.Genetics
 
         [SerializeField] private Dictionary<GeneStat, float> _testingStats;
         [SerializeField] private List<TestOdinEntry> _testEntries;
+        
+        private Dictionary<GeneStat, float> _geneStats;
+
+        public Dictionary<GeneStat, float> GeneStats => _geneStats;
+
+        private void Awake()
+        {
+            _geneStats = GetStats();
+        }
 
         [Button]
         private void TestStats()

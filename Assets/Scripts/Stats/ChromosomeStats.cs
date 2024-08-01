@@ -22,6 +22,7 @@ namespace Stats
 
       private void Initialize()
       {
+         _geneticAlgorithm = GetComponent<GeneticAlgorithm>();
          StatsDictionary = _geneticAlgorithm.GetStats();
       }
       
