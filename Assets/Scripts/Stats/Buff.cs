@@ -5,7 +5,7 @@ namespace Stats
     [Serializable]
     public class Buff
     {
-        public GeneStat geneStat;
+        public StatName statName;
         public float StatValue;
         public bool IsPermanent;
         public bool IsPercentage;

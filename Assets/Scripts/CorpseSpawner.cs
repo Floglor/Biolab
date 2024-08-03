@@ -15,7 +15,7 @@ public class CorpseSpawner : MonoBehaviour
         GameObject corpse = Instantiate(corpsePrefab, creature.transform.position, Quaternion.identity);
         corpse.GetComponent<SpriteRenderer>().sprite = creature.GetComponent<SpriteRenderer>().sprite;
         corpse.GetComponent<SpriteRenderer>().color = Color.red;
-        corpse.GetComponent<Corpse>().startSize = creature.startSize;
+        corpse.GetComponent<Corpse>().startSize = creature.ReturnCorpseSize();
         corpse.GetComponent<Corpse>().age = 0;
         FoodController.Instance.corpses.Add(corpse.GetComponent<Corpse>());
     }

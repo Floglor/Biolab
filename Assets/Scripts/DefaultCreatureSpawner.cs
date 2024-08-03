@@ -7,7 +7,7 @@ public class DefaultCreatureSpawner : MonoBehaviour, IMatingCreateNewCreature
     public void CreateCreature(Creature child, Creature mother, Creature father, float mutationModifier)
     {
         child.startEyesight = FindStatWithMutation(mother.startEyesight, father.startEyesight, mutationModifier);
-        child.startSize = FindStatWithMutation(mother.startSize, father.startSize, mutationModifier);
+        //child.startSize = FindStatWithMutation(mother.startSize, father.startSize, mutationModifier);
         child.startEatingSpeed =
             FindStatWithMutation(mother.startEatingSpeed, father.startEatingSpeed, mutationModifier);
         //child.Speed = FindStatWithMutation(mother.startSpeed, father.startSpeed, mutationModifier);

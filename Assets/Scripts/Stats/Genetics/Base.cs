@@ -6,6 +6,6 @@ namespace Stats.Genetics
     public class Base
     {
         public float Value;
-        public GeneStat geneStat;
+        public StatName statName;
     }
 }

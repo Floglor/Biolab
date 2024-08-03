@@ -10,7 +10,7 @@ namespace Stats
    [RequireComponent(typeof(GeneticAlgorithm))]
    public class ChromosomeStats : MonoBehaviour
    {
-      public Dictionary<GeneStat, float> StatsDictionary = new();
+      public Dictionary<StatName, BaseStat> StatsDictionary = new();
       
       private GeneticAlgorithm _geneticAlgorithm;  
 
@@ -24,19 +24,6 @@ namespace Stats
       {
          _geneticAlgorithm = GetComponent<GeneticAlgorithm>();
          StatsDictionary = _geneticAlgorithm.GetStats();
-      }
-      
-      public float GetStat(GeneStat geneStat)
-      {
-         if (StatsDictionary.TryGetValue(geneStat, out float value))
-         {
-            return value;
-         }
-         else
-         {
-            Debug.LogError($"No value found for {geneStat} on {name}");
-            return 0f;
-         }
       }
    }
 }

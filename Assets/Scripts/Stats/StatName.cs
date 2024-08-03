@@ -1,10 +1,11 @@
 ﻿namespace Stats
 {
-    public enum GeneStat
+    public enum StatName
     {
         Mass, 
         Power,
         Speed,
+        Stamina,
         EnergyReserveRatio,
         LungsCapacity,
         EnergyEfficiencyRatio,

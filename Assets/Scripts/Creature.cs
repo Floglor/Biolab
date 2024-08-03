@@ -33,8 +33,6 @@ public class Creature : MonoBehaviour
     public float startEyesight;
     public float eyesight;
 
-    public float startSize;
-
     public float startEatingSpeed;
     public float eatingSpeed;
 
@@ -138,7 +136,7 @@ public class Creature : MonoBehaviour
     private void InitializeStartingStats()
     {
         CreatureList.Instance.allCreatures.Add(this);
-        Speed = _statContainer.GetStat(GeneStat.Speed);
+        Speed = _statContainer.GetStat(StatName.Speed);
         eyesight = startEyesight;
         hunger = startHunger + Random.Range(5f, 10f);
         thirst = startThirst + Random.Range(5f, 10f);
@@ -189,6 +187,11 @@ public class Creature : MonoBehaviour
     {
         if (!isRunning) return;
         isRunning = false;
-        Speed = _statContainer.GetStat(GeneStat.Speed);
+        Speed = _statContainer.GetStat(StatName.Speed);
+    }
+
+    public float ReturnCorpseSize()
+    {
+        return _statContainer.GetStat(StatName.Size);
     }
 }

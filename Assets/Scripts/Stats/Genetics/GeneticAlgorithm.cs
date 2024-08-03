@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
-using Sirenix.Serialization;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Stats.Genetics
@@ -11,12 +11,12 @@ namespace Stats.Genetics
     [Serializable]
     internal class TestOdinEntry
     {
-        public GeneStat geneStat;
-        public float value;
+        [FormerlySerializedAs("geneStat")] public StatName statName;
+        public BaseStat value;
 
-        public TestOdinEntry(GeneStat geneStat, float value)
+        public TestOdinEntry(StatName statName, BaseStat value)
         {
-            this.geneStat = geneStat;
+            this.statName = statName;
             this.value = value;
         }
     }
@@ -28,16 +28,23 @@ namespace Stats.Genetics
 
         [SerializeField] private List<Chromosome> gameteChromosomes;
 
-        [SerializeField] private Dictionary<GeneStat, float> _testingStats;
+        [SerializeField] private Dictionary<StatName, BaseStat> _testingStats;
         [SerializeField] private List<TestOdinEntry> _testEntries;
         
-        private Dictionary<GeneStat, float> _geneStats;
+        private Dictionary<StatName, BaseStat> _geneStats;
 
-        public Dictionary<GeneStat, float> GeneStats => _geneStats;
+        public Dictionary<StatName, BaseStat> GeneStats => _geneStats;
 
         private void Awake()
         {
             _geneStats = GetStats();
+            
+           // _geneStats[StatName.Mass] = new SimpleStat(1);
+           // _geneStats[StatName.Power] = new SimpleStat(1);
+           // 
+           // _geneStats[StatName.Speed] = new DerivedStat(() => 
+           //     100 / (_geneStats[StatName.Mass].Value + _geneStats[StatName.Power].Value)
+           // );
         }
 
         [Button]
@@ -47,16 +54,16 @@ namespace Stats.Genetics
 
             _testEntries = new List<TestOdinEntry>();
             
-            foreach (KeyValuePair<GeneStat, float> keyValuePair in _testingStats)
+            foreach (KeyValuePair<StatName, BaseStat> keyValuePair in _testingStats)
             {
                 _testEntries.Add(new TestOdinEntry(keyValuePair.Key, keyValuePair.Value));
             }
         }
 
 
-        public Dictionary<GeneStat, float> GetStats()
+        public Dictionary<StatName, BaseStat> GetStats()
         {
-            Dictionary<GeneStat, float> returnStats = new Dictionary<GeneStat, float>();
+            Dictionary<StatName, BaseStat> returnStats = new Dictionary<StatName, BaseStat>();
 
             foreach (ChromosomePair parentChromosome in parentChromosomes)
             {
@@ -85,17 +92,17 @@ namespace Stats.Genetics
             return returnStats;
         }
 
-        private static void WriteBases(Dictionary<GeneStat, float> stats, Gene gene, int divider = 1)
+        public static void WriteBases(Dictionary<StatName, BaseStat> stats, Gene gene, int divider = 1)
         {
             foreach (Base geneBase in gene.Bases)
             {
-                if (stats.ContainsKey(geneBase.geneStat))
+                if (stats.ContainsKey(geneBase.statName))
                 {
-                    stats[geneBase.geneStat] += geneBase.Value / divider;
+                    stats[geneBase.statName].UpdateBaseStat(geneBase.Value / divider);
                 }
                 else
                 {
-                    stats.TryAdd(geneBase.geneStat, geneBase.Value / divider);
+                    stats[geneBase.statName] = new SimpleStat(geneBase.Value / divider);
                 }
             }
         }

@@ -410,7 +410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   geneticAlgorithm: {fileID: 8237208899057746111}
   TargetBuff:
-    geneStat: 0
+    statName: 0
     StatValue: 0
     IsPermanent: 0
     IsPercentage: 0
@@ -432,10 +432,12 @@ MonoBehaviour:
       index: 1
       Genes:
       - {fileID: 11400000, guid: 43edba2de8f0b31458f289ae4ea5fbd1, type: 2}
+      - {fileID: 11400000, guid: 04e9139d1fb31b948aaeb966b7e1f6d9, type: 2}
     FatherChromosome:
       index: 1
       Genes:
       - {fileID: 11400000, guid: 43edba2de8f0b31458f289ae4ea5fbd1, type: 2}
+      - {fileID: 11400000, guid: 04e9139d1fb31b948aaeb966b7e1f6d9, type: 2}
   gameteChromosomes: []
   _testEntries: []
   testChromosomePair:
@@ -469,7 +471,6 @@ MonoBehaviour:
   reproductionNeed: 0
   startEyesight: 6
   eyesight: 0
-  startSize: 150
   startEatingSpeed: 3
   eatingSpeed: 0
   isMale: 0

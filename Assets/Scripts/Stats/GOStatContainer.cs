@@ -9,14 +9,14 @@ namespace Stats
 {
     public class GOStatContainer : MonoBehaviour
     {
-        [SerializeField] private GeneticAlgorithm geneticAlgorithm; 
+        [SerializeField] private GeneticAlgorithm geneticAlgorithm;
 
-        private Dictionary<GeneStat, float> _localStats;
-        private Dictionary<GeneStat, float> _originalStats;
+        private Dictionary<StatName, BaseStat> _localStats;
+        private Dictionary<StatName, BaseStat> _originalStats;
 
 
         private List<Buff> _buffs;
-        
+
         //testing
         public Buff TargetBuff;
 
@@ -25,10 +25,11 @@ namespace Stats
         {
             BuffStat(TargetBuff);
         }
+
         private void Initialize()
         {
             _localStats = geneticAlgorithm.GeneStats;
-            _originalStats = new Dictionary<GeneStat, float>(geneticAlgorithm.GeneStats);
+            _originalStats = new Dictionary<StatName, BaseStat>(geneticAlgorithm.GeneStats);
         }
 
         private void Start()
@@ -43,33 +44,33 @@ namespace Stats
 
         public void BuffStat(Buff buff)
         {
-            bool hasStat = _localStats.TryGetValue(buff.geneStat, out float oldStat);
-            
+            bool hasStat = _localStats.TryGetValue(buff.statName, out BaseStat oldStat);
+
             if (!hasStat) return;
 
             Buff newBuff = new Buff()
             {
                 IsPercentage = buff.IsPercentage,
                 IsPermanent = buff.IsPermanent,
-                geneStat = buff.geneStat,
+                statName = buff.statName,
                 StatValue = buff.StatValue,
                 Time = buff.Time
             };
 
             _buffs.Add(newBuff);
 
-            RecalculateStat(newBuff.geneStat);
+            RecalculateStat(newBuff.statName);
         }
 
 
         private void ProceedBuffTimer()
         {
             if (_buffs.IsNullOrEmpty()) return;
-            
+
             for (int i = 0; i < _buffs.Count; i++)
             {
                 Buff buff = _buffs[i];
-                
+
                 if (buff.IsPermanent) continue;
 
                 buff.Time -= Time.deltaTime;
@@ -81,17 +82,17 @@ namespace Stats
             }
         }
 
-        private void RecalculateStat(GeneStat geneStat)
+        private void RecalculateStat(StatName statName)
         {
-            bool hasStat = _originalStats.TryGetValue(geneStat, out float statValue);
+            bool hasStat = _originalStats.TryGetValue(statName, out BaseStat statValue);
             if (!hasStat) return;
-            
+
             float percentageBuffs = 0f;
             float flatBuffs = 0f;
-            
+
             foreach (Buff buff in _buffs)
             {
-                if (buff.geneStat != geneStat) continue;
+                if (buff.statName != statName) continue;
 
                 if (buff.IsPercentage)
                     percentageBuffs += buff.StatValue;
@@ -99,47 +100,48 @@ namespace Stats
                     flatBuffs += buff.StatValue;
             }
 
-            float resultStat = statValue + flatBuffs;
-            resultStat += resultStat * (percentageBuffs / 100f); 
-            
-            SetStat(geneStat, resultStat);
+            float resultStat = statValue.Value + flatBuffs;
+            resultStat += resultStat * (percentageBuffs / 100f);
+
+            SetStat(statName, resultStat);
         }
 
         private void RemoveBuff(Buff buff)
         {
             _buffs.Remove(buff);
-            RecalculateStat(buff.geneStat);
+            RecalculateStat(buff.statName);
         }
 
 
-        public float GetStat(GeneStat geneStat)
+        public float GetStat(StatName statName)
         {
-            if (_localStats.TryGetValue(geneStat, out float value))
+            if (_localStats.TryGetValue(statName, out BaseStat value))
             {
-                return value;
+                return value.Value;
             }
             else
             {
-                Debug.LogError($"No value found for {geneStat} on {name}");
+                Debug.LogError($"No value found for {statName} on {name}");
                 return 0f;
             }
         }
 
-        public void SetStat(GeneStat geneStat, float changeValue)
+        public void SetStat(StatName statName, float changeValue)
         {
-            if (_localStats.ContainsKey(geneStat))
+            if (_localStats.ContainsKey(statName))
             {
-                _localStats[geneStat] = changeValue;
+                if (_localStats[statName] is SimpleStat simpleStat)
+                    simpleStat.UpdateBaseStat(changeValue);
             }
             else
             {
-                Debug.LogError($"SetStat: No value found for {geneStat} on {name}");
+                Debug.LogError($"SetStat: No value found for {statName} on {name}");
             }
         }
 
-        public bool ContainsKey(GeneStat geneStat)
+        public bool ContainsKey(StatName statName)
         {
-            return _localStats.ContainsKey(geneStat);
+            return _localStats.ContainsKey(statName);
         }
     }
 }
