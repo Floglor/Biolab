@@ -32,6 +32,7 @@ public class GameConfigController : MonoBehaviour
         Debug.Log(_herbivoresSlider.mainSlider.value);
 
         SceneManager.LoadSceneAsync("SampleScene");
+        
 
     }
 }

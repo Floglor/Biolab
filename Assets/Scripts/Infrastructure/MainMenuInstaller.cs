@@ -1,8 +1,6 @@
 ﻿using Modern_UI_Pack.Scripts.Dropdown;
 using Modern_UI_Pack.Scripts.Slider;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
 

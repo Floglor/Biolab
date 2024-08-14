@@ -30,21 +30,44 @@ namespace Stats.Genetics
 
         [SerializeField] private Dictionary<StatName, BaseStat> _testingStats;
         [SerializeField] private List<TestOdinEntry> _testEntries;
-        
+
         private Dictionary<StatName, BaseStat> _geneStats;
 
         public Dictionary<StatName, BaseStat> GeneStats => _geneStats;
 
+        public CreatureDefaultValues CreatureDefaultValues;
+
         private void Awake()
         {
-            _geneStats = GetStats();
+            //  _geneStats = GetStats();
+            //  
+            // _geneStats[StatName.Weight] = new SimpleStat(1);
+            // _geneStats[StatName.Power] = new SimpleStat(1);
+            // 
+            // _geneStats[StatName.Speed] = new DerivedStat(() => 
+            //     100 / (_geneStats[StatName.Weight].Value + _geneStats[StatName.Power].Value)
+            // );
+
+            _geneStats = CreatureDefaultValues.GetDefaultStats();
+
+            // Example of using the stats
+           // Debug.Log("Weight (kg): " + _geneStats[StatName.Weight].Value);
+           // Debug.Log("Power: " + _geneStats[StatName.Power].Value);
+           // Debug.Log("Base Speed (m/s): " + _geneStats[StatName.BaseSpeed].Value);
+           // Debug.Log("Run Speed (m/s): " + _geneStats[StatName.RunSpeed].Value);
+           // Debug.Log("Sprint Speed (m/s): " + _geneStats[StatName.SprintSpeed].Value);
+           // Debug.Log("Energy Consumption Per Second (J/s): " + _geneStats[StatName.EnergyConsumptionPerSecond].Value);
+           // Debug.Log("Stamina Max (J): " + ((StatWithMax) _geneStats[StatName.Stamina]).MaxValue);
+           // Debug.Log("Current Stamina (J): " + ((StatWithMax) _geneStats[StatName.Stamina]).CurrentValue);
+
+
+            float deltaTime = 1;
             
-           // _geneStats[StatName.Mass] = new SimpleStat(1);
-           // _geneStats[StatName.Power] = new SimpleStat(1);
-           // 
-           // _geneStats[StatName.Speed] = new DerivedStat(() => 
-           //     100 / (_geneStats[StatName.Mass].Value + _geneStats[StatName.Power].Value)
-           // );
+
+          // // Print current stamina
+          // Debug.Log("Stamina after energy consumption: " + ((StatWithMax) _geneStats[StatName.Stamina]).CurrentValue);
+
+          // Debug.Log("Stamina after running: " + ((StatWithMax) _geneStats[StatName.Stamina]).CurrentValue);
         }
 
         [Button]
@@ -53,7 +76,7 @@ namespace Stats.Genetics
             _testingStats = GetStats();
 
             _testEntries = new List<TestOdinEntry>();
-            
+
             foreach (KeyValuePair<StatName, BaseStat> keyValuePair in _testingStats)
             {
                 _testEntries.Add(new TestOdinEntry(keyValuePair.Key, keyValuePair.Value));

@@ -2,15 +2,16 @@
 {
     public enum StatName
     {
-        Mass, 
+        Weight,
         Power,
         Speed,
-        Stamina,
         EnergyReserveRatio,
         LungsCapacity,
         EnergyEfficiencyRatio,
         SprintSpeedPreferenceRatio,
         Hunger,
+        HungerDecay,
+        CaloriesToHungerConversionRate,
         HungerThreshold,
         MaxHunger,
         Thirst,
@@ -18,9 +19,18 @@
         ReproductionNeedThreshold,
         ReproductionNeedDecay,
         EyeSight,
-        Size,
         EatingSpeed,
         IsMale,
+        SprintSpeed,
+        BaseSpeed,
+        RunSpeed,
+        EnergyConsumptionPerSecond,
+        Calories,
+        MaxCalorieCount,
+        MetabolismRatePerSec,
+        MaxWeight,
+        HungerDC,
+        HungerDecayInterval
     }
     /*
      *  

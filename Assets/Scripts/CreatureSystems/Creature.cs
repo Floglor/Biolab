@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
+
 public class Creature : MonoBehaviour
 {
     private const int HiddenAlpha = 50;
@@ -71,7 +72,9 @@ public class Creature : MonoBehaviour
     public CustomTile LastFoodTile;
     public IMovingBehaviour MovingBehaviour;
     public IRepeatMove RepeatMoveBehaviour;
-    private GOStatContainer _statContainer;
+    public CreatureState state;
+
+    public Action DeathAction;
 
     public float Speed
     {
@@ -83,9 +86,11 @@ public class Creature : MonoBehaviour
         get => _speed;
     }
 
+    public GOStatContainer GetStats { get; private set; }
+
     protected void Start()
     {
-        _statContainer = GetComponent<GOStatContainer>();
+        GetStats = GetComponent<GOStatContainer>();
         aiPath = GetComponent<AIPath>();
         seeker = GetComponent<Seeker>();
         EatingBehaviour = GetComponent<IEatingBehaviour>();
@@ -95,6 +100,9 @@ public class Creature : MonoBehaviour
         RepeatMoveBehaviour = GetComponent<IRepeatMove>();
         _needsUI = GetComponent<INeedsUI>();
         stateController = GetComponent<StateController>();
+
+        DeathAction += Die;
+        
 
         InitializeStartingStats();
         aiPath.maxSpeed = Speed;
@@ -136,7 +144,7 @@ public class Creature : MonoBehaviour
     private void InitializeStartingStats()
     {
         CreatureList.Instance.allCreatures.Add(this);
-        Speed = _statContainer.GetStat(StatName.Speed);
+        Speed = GetStats.GetStat(StatName.BaseSpeed);
         eyesight = startEyesight;
         hunger = startHunger + Random.Range(5f, 10f);
         thirst = startThirst + Random.Range(5f, 10f);
@@ -151,7 +159,7 @@ public class Creature : MonoBehaviour
 
     protected void NeedsDecay()
     {
-        _needsDecayBehaviour.NeedsDecayTick(this);
+        _needsDecayBehaviour.NeedsDecayTick(GetStats, state);
         _needsUI.UpdateThirst(thirst, maxThirst);
         _needsUI.UpdateHunger(hunger, maxHunger);
 
@@ -179,19 +187,21 @@ public class Creature : MonoBehaviour
     public void StartRunning()
     {
         if (isRunning) return;
+        state = CreatureState.Sprinting;
         isRunning = true;
-        Speed *= GlobalValues.Instance.runningSpeedMultiplier;
+        Speed = GetStats.GetStat(StatName.SprintSpeed);
     }
 
     public void StopRunning()
     {
         if (!isRunning) return;
+        state = CreatureState.Running;
         isRunning = false;
-        Speed = _statContainer.GetStat(StatName.Speed);
+        Speed = GetStats.GetStat(StatName.BaseSpeed);
     }
 
     public float ReturnCorpseSize()
     {
-        return _statContainer.GetStat(StatName.Size);
+        return GetStats.GetStat(StatName.Weight);
     }
 }

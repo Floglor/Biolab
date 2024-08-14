@@ -36,6 +36,9 @@ public class GlobalValues : MonoBehaviour
     [BoxGroup("Needs Satisfaction")] public float maxHungerDeathThreshold;
     [BoxGroup("Needs Satisfaction")] public float maxThirstDeathThreshold;
     [BoxGroup("Needs Satisfaction")] public float minHuntDecisionHungerThreshold;
+    
+    [BoxGroup("Weight")] public float minimumWeightThreshold;
+    [BoxGroup("Weight")] public float weightToCalorieRatio;
 
 
     [BoxGroup("Other")] public float corpseMaxAge;

@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 1650760892521877883}
   - component: {fileID: 1650760892521877862}
   - component: {fileID: 1650760892521877863}
-  - component: {fileID: -1221983267129512335}
   - component: {fileID: 1650760892521877873}
   - component: {fileID: 1650760892521877872}
   - component: {fileID: 1650760892521877875}
@@ -104,6 +103,8 @@ GameObject:
   - component: {fileID: 6977094636041237647}
   - component: {fileID: 1819318982}
   - component: {fileID: 1338208222959615430}
+  - component: {fileID: 458898523579270306}
+  - component: {fileID: 8194196512183983941}
   m_Layer: 0
   m_Name: Carnivore
   m_TagString: Creature
@@ -257,12 +258,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geneticAlgorithm: {fileID: 7971164014420839875}
-  TargetBuff:
-    statName: 0
-    StatValue: 0
-    IsPermanent: 0
-    IsPercentage: 0
-    Time: 0
 --- !u!114 &7971164014420839875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +283,8 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 04e9139d1fb31b948aaeb966b7e1f6d9, type: 2}
   gameteChromosomes: []
   _testEntries: []
+  CreatureDefaultValues: {fileID: 11400000, guid: 5ac8dfc490db3cd4e9e51db1f2ccfb21,
+    type: 2}
   testChromosomePair:
     MotherChromosome:
       index: 1
@@ -337,6 +334,7 @@ MonoBehaviour:
   alreadyDrinking: 0
   rvoController: {fileID: 0}
   lastCorpse: {fileID: 0}
+  state: 0
 --- !u!114 &1650760892521877883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,18 +401,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d0337e835fb43dab645672f7da3a648, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-1221983267129512335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650760892521877860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 188971dbbfd4431d9fc2072cd2ab8cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1650760892521877873
@@ -550,6 +536,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 1819318982}
+--- !u!114 &458898523579270306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650760892521877860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1122de374c4149bac1f6ef361371c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8194196512183983941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650760892521877860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadd2cf1beee4afdb72bd6b4122bfb47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2825615010602320459
 GameObject:
   m_ObjectHideFlags: 0

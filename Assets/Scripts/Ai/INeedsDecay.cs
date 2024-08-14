@@ -1,4 +1,9 @@
-﻿public interface INeedsDecay
+﻿using Stats;
+
+namespace Ai
 {
-    void NeedsDecayTick(Creature creature);
+    public interface INeedsDecay
+    {
+        void NeedsDecayTick(GOStatContainer statContainer, CreatureState creatureState);
+    }
 }

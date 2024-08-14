@@ -23,6 +23,7 @@ public class CreatureSpawner : MonoBehaviour
     public static CreatureSpawner Instance;
     public float mutationModifier;
     public List<GameObject> creaturePrefabs;
+    public bool _isTestingSingularSpawn = false;
     private IMatingCreateNewCreature _createCreatureBehaviour;
 
     private GameConfigValues _gameConfigValues;
@@ -45,13 +46,24 @@ public class CreatureSpawner : MonoBehaviour
 
     private void GetGameConfigValues()
     {
-        _gameConfigValues = new GameConfigValues
+        if (!_isTestingSingularSpawn)
         {
-            CarnivoresNumber = PlayerPrefs.GetInt(Config.CarnivoresNumber.ToString()),
-            HerbivoresNumber = PlayerPrefs.GetInt(Config.HerbivoresNumber.ToString()),
-            MutationModifier = PlayerPrefs.GetFloat(Config.MutationModifier.ToString())
-        };
-
+            _gameConfigValues = new GameConfigValues
+            {
+                CarnivoresNumber = PlayerPrefs.GetInt(Config.CarnivoresNumber.ToString()),
+                HerbivoresNumber = PlayerPrefs.GetInt(Config.HerbivoresNumber.ToString()),
+                MutationModifier = PlayerPrefs.GetFloat(Config.MutationModifier.ToString())
+            };
+        }
+        else
+        {
+            _gameConfigValues = new GameConfigValues
+            {
+                CarnivoresNumber = 1,
+                HerbivoresNumber = 0,
+                MutationModifier = PlayerPrefs.GetFloat(Config.MutationModifier.ToString())
+            };
+        }
         mutationModifier = _gameConfigValues.MutationModifier;
     }
 
@@ -83,7 +95,8 @@ public class CreatureSpawner : MonoBehaviour
 
     private void SpawnInitialCreature(CreatureType creatureType, Vector3 position)
     {
-        GameObject creature = Instantiate(creatureType == CreatureType.Carnivore ? creaturePrefabs[0] : creaturePrefabs[1], position,
+        GameObject creature = Instantiate(
+            creatureType == CreatureType.Carnivore ? creaturePrefabs[0] : creaturePrefabs[1], position,
             Quaternion.identity);
 
         creature.GetComponent<Creature>().isMale = Random.Range(0f, 1f) >= 0.5;
@@ -93,7 +106,6 @@ public class CreatureSpawner : MonoBehaviour
     {
         if (mother == null) Debug.LogError("Spawn New Creature: mother is null");
         if (father == null) Debug.LogError("Spawn New Creature: father is null");
-        if (place == null) Debug.LogError("Spawn New Creature: place is null");
 
         GameObject creaturePrefab = creaturePrefabs.FirstOrDefault(prefab
             => prefab.GetComponent<Creature>().creatureType == mother.creatureType);

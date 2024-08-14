@@ -1,7 +1,11 @@
-﻿using UnityEngine;
+﻿using Ai;
+using Stats;
+using Stats.Genetics;
+using UnityEngine;
 
 public class GlobalNeedsDecay : MonoBehaviour, INeedsDecay
 {
+    
     public void NeedsDecayTick(Creature creature)
     {
         creature.thirst += GlobalValues.Instance.globalThirstDecay;
@@ -9,5 +13,9 @@ public class GlobalNeedsDecay : MonoBehaviour, INeedsDecay
 
         creature.hunger += GlobalValues.Instance.globalHungerDecay;
         creature.reproductionNeed += GlobalValues.Instance.globalBreedDecay;
+    }
+    public void NeedsDecayTick(GOStatContainer statContainer, CreatureState creatureState)
+    {
+        throw new System.NotImplementedException();
     }
 }

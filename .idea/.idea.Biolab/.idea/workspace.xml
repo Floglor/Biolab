@@ -55,10 +55,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3940">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="3940" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -90,16 +90,29 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Stats/Genetics/GeneticAlgorithm.cs</url>
-          <line>95</line>
+          <line>118</line>
           <properties documentPath="C:\Biolab\Assets\Scripts\Stats\Genetics\GeneticAlgorithm.cs" initialLine="92" containingFunctionPresentation="method 'WriteBases'">
             <startOffsets>
-              <option value="3317" />
+              <option value="4550" />
             </startOffsets>
             <endOffsets>
-              <option value="3318" />
+              <option value="4551" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Stats/Genetics/GeneticAlgorithm.cs</url>
+          <line>50</line>
+          <properties documentPath="C:\Biolab\Assets\Scripts\Stats\Genetics\GeneticAlgorithm.cs" initialLine="50" containingFunctionPresentation="method 'Awake'">
+            <startOffsets>
+              <option value="1506" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1559" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
