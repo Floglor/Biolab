@@ -10,21 +10,14 @@ namespace Stats
         public StatWithMax(float baseValue, float maxValue) : base(baseValue)
         {
             MaxValue = maxValue;
-            CurrentValue = maxValue;  // Initialize current value to max value
+            CurrentValue = baseValue;  // Initialize current value to max value
         }
 
         public override float Value => CurrentValue;
 
         public override void UpdateBaseStat(float value)
         {
-            MaxValue += value;
             CurrentValue += value; // Update current value by the same amount, if necessary
-            ClampCurrentValue();
-        }
-
-        public void ModifyCurrentValue(float delta)
-        {
-            CurrentValue += delta;
             ClampCurrentValue();
         }
 

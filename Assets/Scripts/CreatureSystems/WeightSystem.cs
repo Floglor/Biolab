@@ -16,7 +16,7 @@ namespace CreatureSystems
         private bool _isDeathEventFired = false;
 
         [ShowInInspector] [ReadOnly] private float _weight;
-        [ShowInInspector] private float _calories;
+        [ShowInInspector] [ReadOnly] private float _calories;
         [ShowInInspector] [ReadOnly] private float _energyConsumptionPerSecond;
 
         private Action _deathAction;

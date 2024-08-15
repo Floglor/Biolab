@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 1338208222959615430}
   - component: {fileID: 458898523579270306}
   - component: {fileID: 8194196512183983941}
+  - component: {fileID: -1974557138018773454}
   m_Layer: 0
   m_Name: Carnivore
   m_TagString: Creature
@@ -309,8 +310,6 @@ MonoBehaviour:
   speciesID: foxy
   creatureType: 0
   startHunger: 1
-  hunger: 0
-  maxHunger: 0
   startThirst: 1
   thirst: 0
   maxThirst: 0
@@ -558,6 +557,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cadd2cf1beee4afdb72bd6b4122bfb47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1974557138018773454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650760892521877860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dfc2faf03604e899721573438277a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2825615010602320459

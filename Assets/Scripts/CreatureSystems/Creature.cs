@@ -1,5 +1,6 @@
 ﻿using System;
 using Ai;
+using CreatureSystems;
 using Pathfinding;
 using Pathfinding.RVO;
 using Sirenix.OdinInspector;
@@ -20,8 +21,6 @@ public class Creature : MonoBehaviour
     public CreatureType creatureType;
 
     public float startHunger;
-    [ShowInInspector] public float hunger;
-    public float maxHunger;
 
     public float startThirst;
     [ShowInInspector] public float thirst;
@@ -29,7 +28,7 @@ public class Creature : MonoBehaviour
 
     public float startReproductionNeed;
     public float reproductionNeed;
-    
+
 
     public float startEyesight;
     public float eyesight;
@@ -60,6 +59,7 @@ public class Creature : MonoBehaviour
     private IPredatorAwareness _predatorAwareness;
     private INeedsUI _needsUI;
 
+
     private float _speed;
 
 
@@ -73,8 +73,14 @@ public class Creature : MonoBehaviour
     public IMovingBehaviour MovingBehaviour;
     public IRepeatMove RepeatMoveBehaviour;
     public CreatureState state;
-
+    public IHungerSystem HungerSystem;
+    
     public Action DeathAction;
+
+    public Creature(IHungerSystem hungerSystem)
+    {
+        HungerSystem = hungerSystem;
+    }
 
     public float Speed
     {
@@ -85,6 +91,8 @@ public class Creature : MonoBehaviour
         }
         get => _speed;
     }
+
+    public float hunger => HungerSystem.GetHunger();
 
     public GOStatContainer GetStats { get; private set; }
 
@@ -100,9 +108,20 @@ public class Creature : MonoBehaviour
         RepeatMoveBehaviour = GetComponent<IRepeatMove>();
         _needsUI = GetComponent<INeedsUI>();
         stateController = GetComponent<StateController>();
+        HungerSystem = GetComponent<IHungerSystem>();
+        
+        foreach (IReceiveDeathAction receiver in GetComponents<IReceiveDeathAction>())
+        {
+            receiver.SetDeathAction(DeathAction);
+        }
+        
+        foreach (IReceiveStatContainer receiver in GetComponents<IReceiveStatContainer>())
+        {
+            receiver.SetStatContainer(GetStats);
+        }
 
         DeathAction += Die;
-        
+
 
         InitializeStartingStats();
         aiPath.maxSpeed = Speed;
@@ -146,13 +165,12 @@ public class Creature : MonoBehaviour
         CreatureList.Instance.allCreatures.Add(this);
         Speed = GetStats.GetStat(StatName.BaseSpeed);
         eyesight = startEyesight;
-        hunger = startHunger + Random.Range(5f, 10f);
+
         thirst = startThirst + Random.Range(5f, 10f);
         reproductionNeed = startReproductionNeed + Random.Range(5f, 10f);
         aiPath.maxSpeed = Speed;
         eatingSpeed = startEatingSpeed;
         alreadyEating = false;
-        maxHunger = GlobalValues.Instance.maxHungerDeathThreshold;
         maxThirst = GlobalValues.Instance.maxThirstDeathThreshold;
     }
 
@@ -161,15 +179,13 @@ public class Creature : MonoBehaviour
     {
         _needsDecayBehaviour.NeedsDecayTick(GetStats, state);
         _needsUI.UpdateThirst(thirst, maxThirst);
-        _needsUI.UpdateHunger(hunger, maxHunger);
 
         CheckForDying();
     }
 
     private void CheckForDying()
     {
-        if (maxThirst - thirst < GlobalValues.Instance.globalThirstDecay ||
-            maxHunger - hunger < GlobalValues.Instance.globalHungerDecay)
+        if (maxThirst - thirst < GlobalValues.Instance.globalThirstDecay)
             Die();
     }
 

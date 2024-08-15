@@ -18,6 +18,12 @@ public class CreatureDefaultValues : SerializedScriptableObject
     public float StartingCalories = 20000f;
     public float MaxCalorieCount; 
     public float MetabolismRatePerSec;
+    public float Hunger = 0f;
+    public float MaxHunger = 100f;
+    public float HungerDecay = 0.5f;
+    public float CaloriesToHungerConversionRate = 1;
+    public float HungerDC = 14f;
+    public float HungerDecayInterval = 60f;
 
     private const float CaloriesPerKg = 7700f; // 1 kg of weight ~ 7700 calories
     private const float DailyCaloricExpenditure = 2500f; // Example: 2500 calories/day for maintenance
@@ -37,7 +43,12 @@ public class CreatureDefaultValues : SerializedScriptableObject
             [StatName.Calories] = new SimpleStat(StartingCalories),
             [StatName.MaxCalorieCount] = new SimpleStat(MaxCalorieCount),
             [StatName.MaxWeight] = new SimpleStat(MaxWeight),
-            [StatName.MetabolismRatePerSec] = new SimpleStat(MetabolismRatePerSec)
+            [StatName.MetabolismRatePerSec] = new SimpleStat(MetabolismRatePerSec),
+            [StatName.HungerDecay] = new SimpleStat(HungerDecay),
+            [StatName.CaloriesToHungerConversionRate] = new SimpleStat(CaloriesToHungerConversionRate),
+            [StatName.HungerDC] = new SimpleStat(HungerDC),
+            [StatName.HungerDecayInterval] = new SimpleStat(HungerDecayInterval),
+
         };
 
         statsDictionary[StatName.BaseSpeed] = new DerivedStat(() =>
@@ -57,6 +68,8 @@ public class CreatureDefaultValues : SerializedScriptableObject
             EnergyConsumptionMultiplier *
             ((statsDictionary[StatName.Weight].Value + statsDictionary[StatName.Power].Value) * 0.1f)
         );
+
+        statsDictionary[StatName.Hunger] = new StatWithMax(Hunger, MaxHunger);
 
         return statsDictionary;
     }

@@ -45,7 +45,7 @@ public class DefaultEatingBehaviour : MonoBehaviour, IEatingBehaviour
             if (creature.LastFoodTile.GetEaten(Creature.ChompSize, creature.transform.position) &&
                 creature.hunger >= 2f)
             {
-                creature.hunger -= Creature.ChompSize;
+                creature.HungerSystem.SatisfyHunger(Creature.ChompSize);
                 yield return new WaitForSeconds(1/creature.eatingSpeed / Time.timeScale);
             }
             else

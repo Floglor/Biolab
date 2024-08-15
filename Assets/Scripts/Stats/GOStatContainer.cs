@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Sirenix.OdinInspector;
-using Sirenix.Utilities;
+﻿using System.Collections.Generic;
 using Stats.Genetics;
 using UnityEngine;
 
@@ -44,8 +41,7 @@ namespace Stats
         {
             if (_localStats.ContainsKey(statName))
             {
-                if (_localStats[statName] is SimpleStat simpleStat)
-                    simpleStat.UpdateBaseStat(changeValue);
+                _localStats[statName].UpdateBaseStat(changeValue);
             }
             else
             {

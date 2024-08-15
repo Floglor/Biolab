@@ -13,9 +13,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stats/Genetics/GeneticAlgorithm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stats/CreatureDefaultValues.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/18652b5914b14e07a74076a4608f13e36a00/c5/e4b882b3/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stats/ChromosomeStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stats/Genetics/ChromosomePair.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/Creature.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.2d.tilemap/Editor/TileDragAndDrop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stats/GOStatContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/0b2ac4dd06f443c99aa12f664d17a1665a200/8e/4a4529ab/SerializedScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
@@ -55,10 +57,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="45192">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="45192" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -102,17 +104,43 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Stats/Genetics/GeneticAlgorithm.cs</url>
-          <line>50</line>
-          <properties documentPath="C:\Biolab\Assets\Scripts\Stats\Genetics\GeneticAlgorithm.cs" initialLine="50" containingFunctionPresentation="method 'Awake'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Stats/StatWithMax.cs</url>
+          <line>19</line>
+          <properties documentPath="C:\Biolab\Assets\Scripts\Stats\StatWithMax.cs" initialLine="19" containingFunctionPresentation="method 'UpdateBaseStat'">
             <startOffsets>
-              <option value="1506" />
+              <option value="541" />
             </startOffsets>
             <endOffsets>
-              <option value="1559" />
+              <option value="620" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Stats/CreatureDefaultValues.cs</url>
+          <line>71</line>
+          <properties documentPath="C:\Biolab\Assets\Scripts\Stats\CreatureDefaultValues.cs" initialLine="71" containingFunctionPresentation="method 'GetDefaultStats'">
+            <startOffsets>
+              <option value="2921" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2991" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Stats/StatWithMax.cs</url>
+          <line>10</line>
+          <properties documentPath="C:\Biolab\Assets\Scripts\Stats\StatWithMax.cs" initialLine="10" containingFunctionPresentation="constructor 'StatWithMax'">
+            <startOffsets>
+              <option value="282" />
+            </startOffsets>
+            <endOffsets>
+              <option value="283" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
