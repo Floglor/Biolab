@@ -98,6 +98,8 @@ public class Creature : MonoBehaviour
 
     protected void Start()
     {
+        DeathAction += Die;
+        
         GetStats = GetComponent<GOStatContainer>();
         aiPath = GetComponent<AIPath>();
         seeker = GetComponent<Seeker>();
@@ -119,8 +121,7 @@ public class Creature : MonoBehaviour
         {
             receiver.SetStatContainer(GetStats);
         }
-
-        DeathAction += Die;
+        
 
 
         InitializeStartingStats();

@@ -57,10 +57,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="45192">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="67128">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="45192" />
+      <option name="pid" value="67128" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -104,43 +104,30 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Stats/StatWithMax.cs</url>
-          <line>19</line>
-          <properties documentPath="C:\Biolab\Assets\Scripts\Stats\StatWithMax.cs" initialLine="19" containingFunctionPresentation="method 'UpdateBaseStat'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/HungerSystem.cs</url>
+          <line>58</line>
+          <properties documentPath="C:\Biolab\Assets\Scripts\CreatureSystems\HungerSystem.cs" initialLine="58" containingFunctionPresentation="method 'PerformDeathCheck'">
             <startOffsets>
-              <option value="541" />
+              <option value="1789" />
             </startOffsets>
             <endOffsets>
-              <option value="620" />
+              <option value="1790" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Stats/CreatureDefaultValues.cs</url>
-          <line>71</line>
-          <properties documentPath="C:\Biolab\Assets\Scripts\Stats\CreatureDefaultValues.cs" initialLine="71" containingFunctionPresentation="method 'GetDefaultStats'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/Creature.cs</url>
+          <line>115</line>
+          <properties documentPath="C:\Biolab\Assets\Scripts\CreatureSystems\Creature.cs" initialLine="113" containingFunctionPresentation="method 'Start'">
             <startOffsets>
-              <option value="2921" />
+              <option value="2984" />
             </startOffsets>
             <endOffsets>
-              <option value="2991" />
+              <option value="2985" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Stats/StatWithMax.cs</url>
-          <line>10</line>
-          <properties documentPath="C:\Biolab\Assets\Scripts\Stats\StatWithMax.cs" initialLine="10" containingFunctionPresentation="constructor 'StatWithMax'">
-            <startOffsets>
-              <option value="282" />
-            </startOffsets>
-            <endOffsets>
-              <option value="283" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="10" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
