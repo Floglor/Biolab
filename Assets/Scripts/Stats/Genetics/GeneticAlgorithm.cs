@@ -39,35 +39,8 @@ namespace Stats.Genetics
 
         private void Awake()
         {
-            //  _geneStats = GetStats();
-            //  
-            // _geneStats[StatName.Weight] = new SimpleStat(1);
-            // _geneStats[StatName.Power] = new SimpleStat(1);
-            // 
-            // _geneStats[StatName.Speed] = new DerivedStat(() => 
-            //     100 / (_geneStats[StatName.Weight].Value + _geneStats[StatName.Power].Value)
-            // );
-
             _geneStats = CreatureDefaultValues.GetDefaultStats();
-
-            // Example of using the stats
-           // Debug.Log("Weight (kg): " + _geneStats[StatName.Weight].Value);
-           // Debug.Log("Power: " + _geneStats[StatName.Power].Value);
-           // Debug.Log("Base Speed (m/s): " + _geneStats[StatName.BaseSpeed].Value);
-           // Debug.Log("Run Speed (m/s): " + _geneStats[StatName.RunSpeed].Value);
-           // Debug.Log("Sprint Speed (m/s): " + _geneStats[StatName.SprintSpeed].Value);
-           // Debug.Log("Energy Consumption Per Second (J/s): " + _geneStats[StatName.EnergyConsumptionPerSecond].Value);
-           // Debug.Log("Stamina Max (J): " + ((StatWithMax) _geneStats[StatName.Stamina]).MaxValue);
-           // Debug.Log("Current Stamina (J): " + ((StatWithMax) _geneStats[StatName.Stamina]).CurrentValue);
-
-
             float deltaTime = 1;
-            
-
-          // // Print current stamina
-          // Debug.Log("Stamina after energy consumption: " + ((StatWithMax) _geneStats[StatName.Stamina]).CurrentValue);
-
-          // Debug.Log("Stamina after running: " + ((StatWithMax) _geneStats[StatName.Stamina]).CurrentValue);
         }
 
         [Button]

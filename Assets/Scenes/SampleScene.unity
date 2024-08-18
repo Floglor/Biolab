@@ -35210,21 +35210,20 @@ MonoBehaviour:
       index: 1
       Genes:
       - {fileID: 11400000, guid: 299264b1bc61a364ebd8648d8eed526e, type: 2}
+      - {fileID: 11400000, guid: d49c7b16d600b0d4faff985939415d93, type: 2}
+      - {fileID: 11400000, guid: 427bcaf1476f45d45b4ad10e24fb4e1b, type: 2}
     FatherChromosome:
       index: 1
       Genes:
       - {fileID: 11400000, guid: 715c396387a561a4e8634db88ded1067, type: 2}
+      - {fileID: 11400000, guid: e654bf4a0ac51d243a763c92c538418a, type: 2}
+      - {fileID: 11400000, guid: c4185a7182d056c40b1ff9cd56319b81, type: 2}
   gameteChromosomes:
   - index: 1
     Genes:
-    - {fileID: 11400000, guid: 715c396387a561a4e8634db88ded1067, type: 2}
-    - {fileID: 11400000, guid: a766138b1942e434b8542b25341c7a15, type: 2}
-    - {fileID: 11400000, guid: 427bcaf1476f45d45b4ad10e24fb4e1b, type: 2}
-  - index: 2
-    Genes:
     - {fileID: 11400000, guid: 299264b1bc61a364ebd8648d8eed526e, type: 2}
-    - {fileID: 11400000, guid: d49c7b16d600b0d4faff985939415d93, type: 2}
-    - {fileID: 11400000, guid: c4185a7182d056c40b1ff9cd56319b81, type: 2}
+    - {fileID: 11400000, guid: e654bf4a0ac51d243a763c92c538418a, type: 2}
+    - {fileID: 11400000, guid: 427bcaf1476f45d45b4ad10e24fb4e1b, type: 2}
   _testEntries:
   - statName: 0
   CreatureDefaultValues: {fileID: 0}
@@ -35386,7 +35385,7 @@ MonoBehaviour:
   creaturePrefabs:
   - {fileID: 1650760892521877860, guid: ceb476808ff984a40aa2c78edd8d18b5, type: 3}
   - {fileID: 1650760892521877860, guid: f01beaf7d177fcc4ea49138b187b8929, type: 3}
-  _isTestingSingularSpawn: 1
+  _isTestingSingularSpawn: 0
 --- !u!114 &1282647072
 MonoBehaviour:
   m_ObjectHideFlags: 0

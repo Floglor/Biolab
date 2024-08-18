@@ -57,10 +57,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="67128">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="67128" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -92,39 +92,39 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Stats/Genetics/GeneticAlgorithm.cs</url>
-          <line>118</line>
+          <line>91</line>
           <properties documentPath="C:\Biolab\Assets\Scripts\Stats\Genetics\GeneticAlgorithm.cs" initialLine="92" containingFunctionPresentation="method 'WriteBases'">
             <startOffsets>
-              <option value="4550" />
+              <option value="3093" />
             </startOffsets>
             <endOffsets>
-              <option value="4551" />
+              <option value="3094" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/HungerSystem.cs</url>
-          <line>58</line>
+          <line>67</line>
           <properties documentPath="C:\Biolab\Assets\Scripts\CreatureSystems\HungerSystem.cs" initialLine="58" containingFunctionPresentation="method 'PerformDeathCheck'">
             <startOffsets>
-              <option value="1789" />
+              <option value="2152" />
             </startOffsets>
             <endOffsets>
-              <option value="1790" />
+              <option value="2153" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/Creature.cs</url>
-          <line>115</line>
+          <line>113</line>
           <properties documentPath="C:\Biolab\Assets\Scripts\CreatureSystems\Creature.cs" initialLine="113" containingFunctionPresentation="method 'Start'">
             <startOffsets>
-              <option value="2984" />
+              <option value="2953" />
             </startOffsets>
             <endOffsets>
-              <option value="2985" />
+              <option value="2954" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="14" />

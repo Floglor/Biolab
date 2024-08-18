@@ -20,8 +20,6 @@ public class Creature : MonoBehaviour
     public string speciesID;
     public CreatureType creatureType;
 
-    public float startHunger;
-
     public float startThirst;
     [ShowInInspector] public float thirst;
     public float maxThirst;

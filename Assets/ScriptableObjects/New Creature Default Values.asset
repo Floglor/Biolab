@@ -21,10 +21,21 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  DefaultMass: 70
-  DefaultPower: 500
-  DefaultStaminaMax: 2000
+  Weight: 70
+  MaxWeight: 120
+  Power: 70
   BaseSpeedFactor: 1
   RunSpeedMultiplier: 1
   SprintSpeedMultiplier: 1.5
   EnergyConsumptionMultiplier: 1
+  StartingCalories: 20000
+  MaxCalorieCount: 539000
+  MetabolismRatePerSec: 0.028935185
+  Hunger: 0
+  MaxHunger: 100
+  Thirst: 0
+  MaxThirst: 100
+  HungerDecay: 0.1
+  CaloriesToHungerConversionRate: 5
+  HungerDC: 14
+  HungerDecayInterval: 60

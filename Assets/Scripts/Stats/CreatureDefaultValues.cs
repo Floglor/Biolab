@@ -20,6 +20,8 @@ public class CreatureDefaultValues : SerializedScriptableObject
     public float MetabolismRatePerSec;
     public float Hunger = 0f;
     public float MaxHunger = 100f;
+    public float Thirst = 0f;
+    public float MaxThirst = 100f;
     public float HungerDecay = 0.5f;
     public float CaloriesToHungerConversionRate = 1;
     public float HungerDC = 14f;
@@ -70,6 +72,8 @@ public class CreatureDefaultValues : SerializedScriptableObject
         );
 
         statsDictionary[StatName.Hunger] = new StatWithMax(Hunger, MaxHunger);
+        statsDictionary[StatName.Thirst] = new StatWithMax(Thirst, MaxThirst);
+
 
         return statsDictionary;
     }
