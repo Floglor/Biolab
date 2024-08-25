@@ -92,30 +92,17 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/DefaultMateSeeker.cs</url>
-          <line>39</line>
-          <properties documentPath="C:\Biolab\Assets\Scripts\CreatureSystems\DefaultMateSeeker.cs" initialLine="39" containingFunctionPresentation="method 'BeTargeted'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/GeneCreatureSpawner.cs</url>
+          <line>9</line>
+          <properties documentPath="C:\Biolab\Assets\Scripts\CreatureSystems\GeneCreatureSpawner.cs" initialLine="9" containingFunctionPresentation="method 'CreateCreature'">
             <startOffsets>
-              <option value="1284" />
+              <option value="306" />
             </startOffsets>
             <endOffsets>
-              <option value="1285" />
+              <option value="307" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/DefaultMateSeeker.cs</url>
-          <line>58</line>
-          <properties documentPath="C:\Biolab\Assets\Scripts\CreatureSystems\DefaultMateSeeker.cs" initialLine="58" containingFunctionPresentation="method 'ReturnSingleSexAndUnoccupied'">
-            <startOffsets>
-              <option value="2026" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2083" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="20" />
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

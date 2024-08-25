@@ -28,7 +28,7 @@ namespace Stats.Genetics
 
         [SerializeField] private List<Chromosome> gameteChromosomes;
 
-        public List<Chromosome> GameteChromosomes => gameteChromosomes;
+        public List<Chromosome> GameteChromosomes => Meiosis(parentChromosomes);
 
         [SerializeField] private Dictionary<StatName, BaseStat> _testingStats;
         [SerializeField] private List<TestOdinEntry> _testEntries;
