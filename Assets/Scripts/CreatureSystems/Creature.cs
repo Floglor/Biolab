@@ -21,7 +21,6 @@ public class Creature : MonoBehaviour
     public CreatureType creatureType;
 
     public float startThirst;
-    [ShowInInspector] public float thirst;
     public float maxThirst;
 
     public float startReproductionNeed;
@@ -91,11 +90,13 @@ public class Creature : MonoBehaviour
     }
 
     public float hunger => HungerSystem.GetHunger();
+    public float thirst => HungerSystem.GetThirst();
 
     public GOStatContainer GetStats { get; private set; }
 
     protected void Start()
     {
+        if (isMale) this.name = $"{this.name} (Male)";
         DeathAction += Die;
         
         GetStats = GetComponent<GOStatContainer>();
@@ -165,7 +166,6 @@ public class Creature : MonoBehaviour
         Speed = GetStats.GetStat(StatName.BaseSpeed);
         eyesight = startEyesight;
 
-        thirst = startThirst + Random.Range(5f, 10f);
         reproductionNeed = startReproductionNeed + Random.Range(5f, 10f);
         aiPath.maxSpeed = Speed;
         eatingSpeed = startEatingSpeed;

@@ -17,6 +17,8 @@ namespace CreatureSystems
         private float _decayInterval;
 
         [ShowInInspector] [ReadOnly] private float _hungerDebug;
+        [ShowInInspector] [ReadOnly] private float _thirstDebug;
+
 
         private void Start()
         {
@@ -28,11 +30,11 @@ namespace CreatureSystems
         {
             HungerDecay();
             _hungerDebug = _statContainer.GetStat(StatName.Hunger);
+            _thirstDebug = _statContainer.GetStat(StatName.Thirst);
         }
 
         public void HungerDecay()
         {
-           
             float hunger = _statContainer.GetStat(StatName.Hunger);
             float thirst = _statContainer.GetStat(StatName.Thirst);
 
@@ -77,9 +79,20 @@ namespace CreatureSystems
                 -(calories * _statContainer.GetStat(StatName.CaloriesToHungerConversionRate)));
         }
 
+        public void SatisfyThirst(float amount)
+        {
+            _statContainer.AddToStat(StatName.Thirst,
+                -amount);
+        }
+
         public float GetHunger()
         {
             return _statContainer.GetStat(StatName.Hunger);
+        }
+        
+        public float GetThirst()
+        {
+            return _statContainer.GetStat(StatName.Thirst);
         }
 
         public void SetDeathAction(Action deathAction)

@@ -8,8 +8,6 @@ public class GlobalNeedsDecay : MonoBehaviour, INeedsDecay
     
     public void NeedsDecayTick(Creature creature)
     {
-        creature.thirst += GlobalValues.Instance.globalThirstDecay;
-        if (creature.isRunning) creature.thirst += GlobalValues.Instance.runningThirstDecay;
         creature.reproductionNeed += GlobalValues.Instance.globalBreedDecay;
     }
     public void NeedsDecayTick(GOStatContainer statContainer, CreatureState creatureState)

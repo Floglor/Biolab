@@ -56,15 +56,31 @@ internal class DefaultMateSeeker : MonoBehaviour, IMateSeeker
             return null;
         }
 
-        List<Creature> returnCreatureList = (from creature in creatures
-            where creature != null
-            where creature.isMale == reversedSex
-            where creature.stateController.lastTargetedMate == null
-            where creature.thirst <= GlobalValues.Instance.basicNeedHighThreshold
-            where creature.hunger <= GlobalValues.Instance.basicNeedHighThreshold
-            where creature.stateController.currentState == creature.stateController.initialState
-            where creature.creatureType == searchingCreature.creatureType
-            select creature).ToList();
+        List<Creature> returnCreatureList = new List<Creature>();
+        foreach (Creature creature in creatures)
+        {
+            if (creature != null)
+            {
+                if (creature.isMale == reversedSex)
+                {
+                    if (creature.stateController.lastTargetedMate == null)
+                    {
+                        if (creature.thirst <= GlobalValues.Instance.basicNeedHighThreshold)
+                        {
+                            if (creature.hunger <= GlobalValues.Instance.basicNeedHighThreshold)
+                            {
+                                if (creature.stateController.currentState == creature.stateController.initialState ||
+                                    creature.stateController.currentState == creature.stateController.lookForMateState)
+                                {
+                                    if (creature.creatureType == searchingCreature.creatureType)
+                                        returnCreatureList.Add(creature);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
 
         return returnCreatureList.IsNullOrEmpty() ? null : returnCreatureList;
@@ -77,7 +93,7 @@ internal class DefaultMateSeeker : MonoBehaviour, IMateSeeker
         float maxReproductionNeed = Mathf.NegativeInfinity;
 
         foreach (Creature sortingCreature in sortedCreatureList.Where(sortingCreature =>
-            sortingCreature.reproductionNeed > maxReproductionNeed))
+                     sortingCreature.reproductionNeed > maxReproductionNeed))
         {
             maxReproductionNeed = sortingCreature.reproductionNeed;
             maxReproductionNeedCreature = sortingCreature;

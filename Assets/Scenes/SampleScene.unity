@@ -35344,9 +35344,9 @@ GameObject:
   - component: {fileID: 1282647070}
   - component: {fileID: 1282647071}
   - component: {fileID: 1282647072}
-  - component: {fileID: 1282647073}
   - component: {fileID: 1282647074}
   - component: {fileID: 1282647075}
+  - component: {fileID: 1282647076}
   m_Layer: 0
   m_Name: CreatureSpawner
   m_TagString: Untagged
@@ -35385,7 +35385,7 @@ MonoBehaviour:
   creaturePrefabs:
   - {fileID: 1650760892521877860, guid: ceb476808ff984a40aa2c78edd8d18b5, type: 3}
   - {fileID: 1650760892521877860, guid: f01beaf7d177fcc4ea49138b187b8929, type: 3}
-  _isTestingSingularSpawn: 0
+  _isTestingSingularSpawn: 1
 --- !u!114 &1282647072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35399,18 +35399,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCreatures: []
---- !u!114 &1282647073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1282647069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7fdffeff83b4be4b6d799a0bd9a03bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1282647074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35437,6 +35425,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   corpsePrefab: {fileID: 6320108235693297736, guid: bd7ee7b683f3d1449be86a47a9fba2db,
     type: 3}
+--- !u!114 &1282647076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282647069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53a9616fdfe456b9f5596d551416526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1352554306
 GameObject:
   m_ObjectHideFlags: 0

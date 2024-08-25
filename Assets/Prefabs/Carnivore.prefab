@@ -309,9 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speciesID: foxy
   creatureType: 0
-  startHunger: 1
   startThirst: 1
-  thirst: 0
   maxThirst: 0
   startReproductionNeed: 1
   reproductionNeed: 0
@@ -356,7 +354,8 @@ MonoBehaviour:
   targetCreature: {fileID: 0}
   isWaitingForMateAnswer: 0
   remainState: {fileID: 11400000, guid: c87058f61b9ac7947bac2e4c418e054b, type: 2}
-  matingState: {fileID: 11400000, guid: 29b5cbd508368b54fae9ef6c5f0d53d9, type: 2}
+  matingState: {fileID: 11400000, guid: 2d66f6d83d44ef1478ed45d6f47e841e, type: 2}
+  lookForMateState: {fileID: 11400000, guid: 29b5cbd508368b54fae9ef6c5f0d53d9, type: 2}
   mateMeetingState: {fileID: 11400000, guid: 76756270e0bcca94686caf98e1749e00, type: 2}
   runFromDangerState: {fileID: 0}
   breedState: {fileID: 11400000, guid: c029b78c48fdcd848a3b462c8bf0dfce, type: 2}

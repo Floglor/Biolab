@@ -28,6 +28,8 @@ namespace Stats.Genetics
 
         [SerializeField] private List<Chromosome> gameteChromosomes;
 
+        public List<Chromosome> GameteChromosomes => gameteChromosomes;
+
         [SerializeField] private Dictionary<StatName, BaseStat> _testingStats;
         [SerializeField] private List<TestOdinEntry> _testEntries;
 
@@ -56,7 +58,10 @@ namespace Stats.Genetics
             }
         }
 
-
+        public void SetParentChromosomes(List<ChromosomePair> chromosomePairs)
+        {
+            parentChromosomes = chromosomePairs;
+        }
         public Dictionary<StatName, BaseStat> GetStats()
         {
             Dictionary<StatName, BaseStat> returnStats = new Dictionary<StatName, BaseStat>();

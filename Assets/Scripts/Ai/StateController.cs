@@ -22,6 +22,7 @@ namespace Ai
 
         public State remainState;
         public State matingState;
+        public State lookForMateState;
         public State mateMeetingState;
         public State runFromDangerState;
         public State breedState;

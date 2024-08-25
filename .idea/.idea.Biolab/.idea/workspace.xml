@@ -22,6 +22,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stats/GOStatContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/0b2ac4dd06f443c99aa12f664d17a1665a200/8e/4a4529ab/SerializedScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/d2d2c81895314c46953cb9ff0d490f9325c00/a7/4201aaaa/LinqExtensions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -57,10 +58,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="22404">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="22404" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -91,43 +92,30 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Stats/Genetics/GeneticAlgorithm.cs</url>
-          <line>91</line>
-          <properties documentPath="C:\Biolab\Assets\Scripts\Stats\Genetics\GeneticAlgorithm.cs" initialLine="92" containingFunctionPresentation="method 'WriteBases'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/DefaultMateSeeker.cs</url>
+          <line>39</line>
+          <properties documentPath="C:\Biolab\Assets\Scripts\CreatureSystems\DefaultMateSeeker.cs" initialLine="39" containingFunctionPresentation="method 'BeTargeted'">
             <startOffsets>
-              <option value="3093" />
+              <option value="1284" />
             </startOffsets>
             <endOffsets>
-              <option value="3094" />
+              <option value="1285" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/HungerSystem.cs</url>
-          <line>67</line>
-          <properties documentPath="C:\Biolab\Assets\Scripts\CreatureSystems\HungerSystem.cs" initialLine="58" containingFunctionPresentation="method 'PerformDeathCheck'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/DefaultMateSeeker.cs</url>
+          <line>58</line>
+          <properties documentPath="C:\Biolab\Assets\Scripts\CreatureSystems\DefaultMateSeeker.cs" initialLine="58" containingFunctionPresentation="method 'ReturnSingleSexAndUnoccupied'">
             <startOffsets>
-              <option value="2152" />
+              <option value="2026" />
             </startOffsets>
             <endOffsets>
-              <option value="2153" />
+              <option value="2083" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/Creature.cs</url>
-          <line>113</line>
-          <properties documentPath="C:\Biolab\Assets\Scripts\CreatureSystems\Creature.cs" initialLine="113" containingFunctionPresentation="method 'Start'">
-            <startOffsets>
-              <option value="2953" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2954" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="14" />
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

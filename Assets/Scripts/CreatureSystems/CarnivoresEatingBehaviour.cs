@@ -42,7 +42,7 @@ public class CarnivoresEatingBehaviour : MonoBehaviour, IEatingBehaviour
 
             if (creature.thirst >= 2f)
             {
-                creature.thirst -= Creature.ChompSize;
+                creature.HungerSystem.SatisfyThirst(Creature.ChompSize);
                 yield return new WaitForSeconds(1/creature.eatingSpeed / Time.timeScale);
             }
             else

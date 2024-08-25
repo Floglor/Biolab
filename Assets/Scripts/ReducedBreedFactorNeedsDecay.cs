@@ -7,9 +7,6 @@ public class ReducedBreedFactorNeedsDecay : MonoBehaviour, INeedsDecay
         
     public void NeedsDecayTick(Creature creature)
     {
-        creature.thirst += GlobalValues.Instance.globalThirstDecay;
-        if (creature.isRunning) creature.thirst += GlobalValues.Instance.runningThirstDecay;
-            
         creature.reproductionNeed += GlobalValues.Instance.globalBreedDecay/3;   
     }
     
