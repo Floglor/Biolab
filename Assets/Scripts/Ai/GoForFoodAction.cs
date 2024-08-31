@@ -1,14 +1,16 @@
-﻿using Ai;
-using Ai.Actions;
+﻿using Ai.Actions;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "PluggableAI/Actions/GoForFoodAction")]
-public class GoForFoodAction : OneTimeAction
+namespace Ai
 {
-    public override void Act(StateController controller)
+    [CreateAssetMenu(menuName = "PluggableAI/Actions/GoForFoodAction")]
+    public class GoForFoodAction : OneTimeAction
     {
-        controller.actingCreature.MovingBehaviour.MoveToDestination(controller.actingCreature,
-            controller.actingCreature.lastFoodPosition);
-        //Debug.Log($"last food position: {controller.actingCreature.lastFoodPosition}");
+        public override void Act(StateController controller)
+        {
+            controller.actingCreature.MovingBehaviour.MoveToDestination(controller.actingCreature,
+                controller.actingCreature.lastFoodPosition);
+            //Debug.Log($"last food position: {controller.actingCreature.lastFoodPosition}");
+        }
     }
 }

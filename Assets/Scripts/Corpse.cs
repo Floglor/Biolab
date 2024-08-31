@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CreatureSystems;
+using UnityEngine;
 
 public class Corpse : MonoBehaviour
 {

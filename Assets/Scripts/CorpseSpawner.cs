@@ -1,13 +1,22 @@
-﻿using UnityEngine;
+﻿using CreatureSystems;
+using UnityEngine;
 
 public class CorpseSpawner : MonoBehaviour
 {
     public static CorpseSpawner Instance;
-    public GameObject corpsePrefab;
+    [SerializeField] private GameObject corpsePrefab;
 
     private void Start()
     {
         Instance = this;
+    }
+
+    public void CreateCorpse(float size, Vector2 position)
+    {
+        GameObject corpse = Instantiate(corpsePrefab, position, Quaternion.identity);
+        corpse.GetComponent<Corpse>().startSize = size;
+        corpse.GetComponent<Corpse>().age = 0;
+        FoodController.Instance.corpses.Add(corpse.GetComponent<Corpse>());
     }
 
     public void CreateCorpse(Creature creature)

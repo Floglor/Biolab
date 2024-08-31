@@ -1,4 +1,5 @@
 ﻿using Ai.Infrastructure;
+using CreatureSystems;
 using UnityEngine;
 
 // ReSharper disable once CheckNamespace

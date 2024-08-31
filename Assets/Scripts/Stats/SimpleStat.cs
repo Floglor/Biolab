@@ -1,4 +1,4 @@
-﻿namespace Stats.Genetics
+﻿namespace Stats
 {
     public class SimpleStat : BaseStat
     {

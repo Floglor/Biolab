@@ -1,6 +1,10 @@
-﻿using UnityEngine;
+﻿using CreatureSystems;
+using UnityEngine;
 
-public interface IMovingBehaviour
+namespace Ai
 {
-    void MoveToDestination(Creature creature, Vector3 target);
+    public interface IMovingBehaviour
+    {
+        void MoveToDestination(Creature creature, Vector3 target);
+    }
 }

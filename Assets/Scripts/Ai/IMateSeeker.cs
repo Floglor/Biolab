@@ -1,5 +1,10 @@
-﻿public interface IMateSeeker
+﻿using CreatureSystems;
+
+namespace Ai
 {
-    Creature SeekMate(Creature creature);
-    void BeTargeted(Creature targetCreature, Creature targetingCreature);
+    public interface IMateSeeker
+    {
+        Creature SeekMate(Creature creature);
+        void BeTargeted(Creature targetCreature, Creature targetingCreature);
+    }
 }

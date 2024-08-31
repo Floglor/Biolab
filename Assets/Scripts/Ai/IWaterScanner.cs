@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public interface IWaterScanner
+namespace Ai
 {
-    CustomWaterTile ScanForWater(Vector3 position, float eyeSight, List<CustomWaterTile> waterTiles);
+    public interface IWaterScanner
+    {
+        CustomWaterTile ScanForWater(Vector3 position, float eyeSight, List<CustomWaterTile> waterTiles);
+    }
 }

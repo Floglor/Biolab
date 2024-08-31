@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Stats.Genetics
+namespace Stats
 {
     public class DerivedStat : BaseStat
     {

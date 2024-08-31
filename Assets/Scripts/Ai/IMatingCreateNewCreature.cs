@@ -1,4 +1,9 @@
-﻿public interface IMatingCreateNewCreature
+﻿using CreatureSystems;
+
+namespace Ai
 {
-    void CreateCreature(Creature child, Creature mother, Creature father, float mutationModifier);
+    public interface IMatingCreateNewCreature
+    {
+        void CreateCreature(Creature child, Creature mother, Creature father, float mutationModifier);
+    }
 }

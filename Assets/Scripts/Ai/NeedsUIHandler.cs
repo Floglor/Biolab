@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public interface INeedsUI
+namespace Ai
 {
-    void UpdateHunger(float hunger, float maxHunger);
-    void UpdateThirst(float thirst, float maxThirst);
-}
-public class NeedsUIHandler : MonoBehaviour, INeedsUI
-{
-    public Image hungerImage;
-    public Image thirstImage;
-    
-    public void UpdateHunger(float hunger, float maxHunger)
+    public interface INeedsUI
     {
-        hungerImage.fillAmount = hunger / maxHunger;
+        void UpdateHunger(float hunger, float maxHunger);
+        void UpdateThirst(float thirst, float maxThirst);
     }
-
-    public void UpdateThirst(float thirst, float maxThirst)
+    public class NeedsUIHandler : MonoBehaviour, INeedsUI
     {
-        thirstImage.fillAmount = thirst / maxThirst;
+        public Image hungerImage;
+        public Image thirstImage;
+    
+        public void UpdateHunger(float hunger, float maxHunger)
+        {
+            hungerImage.fillAmount = hunger / maxHunger;
+        }
+
+        public void UpdateThirst(float thirst, float maxThirst)
+        {
+            thirstImage.fillAmount = thirst / maxThirst;
+        }
     }
 }

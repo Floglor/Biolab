@@ -41,6 +41,16 @@ public class FoodController : MonoBehaviour
         UpdateFood();
     }
 
+    public CustomTile GetFoodTileWorld(Vector3 position)
+    {
+        foreach (CustomTile customTile in _foodTiles)
+        {
+            if (_foodTilemap.WorldToCell(position).Equals(customTile.CellPosition))
+                return customTile;
+        }
+
+        return null;
+    }
     public CustomTile GetFoodTile(Vector3 worldPosition)
     {
         foreach (CustomTile customTile in _foodTiles)

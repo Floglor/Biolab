@@ -1,7 +1,11 @@
-﻿using UnityEngine;
+﻿using CreatureSystems;
+using UnityEngine;
 
-public interface IRepeatMove
+namespace Ai
 {
-    void StopRepeatMove();
-    void StartRepeatMove(Creature creature, Transform transformToFollow);
+    public interface IRepeatMove
+    {
+        void StopRepeatMove();
+        void StartRepeatMove(Creature creature, Transform transformToFollow);
+    }
 }

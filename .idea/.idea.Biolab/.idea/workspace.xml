@@ -58,10 +58,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="22404">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="64936">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="22404" />
+      <option name="pid" value="64936" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -79,27 +79,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/FoodController.cs</url>
-          <line>45</line>
-          <properties documentPath="C:\Biolab\Assets\Scripts\FoodController.cs" initialLine="45" containingFunctionPresentation="method 'GetFoodTile'">
-            <startOffsets>
-              <option value="973" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1018" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/GeneCreatureSpawner.cs</url>
-          <line>9</line>
+          <line>10</line>
           <properties documentPath="C:\Biolab\Assets\Scripts\CreatureSystems\GeneCreatureSpawner.cs" initialLine="9" containingFunctionPresentation="method 'CreateCreature'">
             <startOffsets>
-              <option value="306" />
+              <option value="316" />
             </startOffsets>
             <endOffsets>
-              <option value="307" />
+              <option value="317" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="21" />

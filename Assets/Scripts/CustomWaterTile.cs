@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CreatureSystems;
+using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class CustomWaterTile
@@ -50,10 +51,10 @@ internal class TileSlots
                 void OnCreatureOnDrinkingFinished()
                 {
                     ClearSlot(creature);
-                    creature.onDrinkingFinsihed -= OnCreatureOnDrinkingFinished;
+                    creature.OnDrinkingFinished -= OnCreatureOnDrinkingFinished;
                 }
 
-                creature.onDrinkingFinsihed += OnCreatureOnDrinkingFinished;
+                creature.OnDrinkingFinished += OnCreatureOnDrinkingFinished;
                 
                 return true;
             }

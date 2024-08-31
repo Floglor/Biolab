@@ -1,4 +1,5 @@
 ﻿using System;
+using CreatureSystems;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -12,9 +13,10 @@ public enum FoodTier
 public class CustomTile
 {
     private readonly Tile _linkedTile;
-    private Vector3Int _cellPosition;
+   
     private FoodTier _foodTier;
-    private float _maxFoodLevel;
+    private float _maxFoodLevel; 
+    public Vector3Int CellPosition;
     public float FoodLevel;
     public Vector3 WorldPosition;
 
@@ -25,7 +27,7 @@ public class CustomTile
         _foodTier = foodTier;
         FoodLevel = foodLevel;
         _maxFoodLevel = maxFoodLevel;
-        _cellPosition = cellPosition;
+        CellPosition = cellPosition;
         WorldPosition = worldPosition;
         //Debug.Log($"food world position: [{worldPosition.x}], [{worldPosition.y}], food tier: {foodTier}");
     }

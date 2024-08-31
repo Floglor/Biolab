@@ -1,222 +1,222 @@
 ﻿using System;
 using Ai;
-using CreatureSystems;
 using Pathfinding;
 using Pathfinding.RVO;
-using Sirenix.OdinInspector;
 using Stats;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 
-public class Creature : MonoBehaviour
+namespace CreatureSystems
 {
-    private const int HiddenAlpha = 50;
-    private const int NotHiddenAlpha = 255;
+    public class Creature : MonoBehaviour
+    {
+        private const int HiddenAlpha = 50;
+        private const int NotHiddenAlpha = 255;
 
-    public const float EatingRange = 3f;
-    public const float ChompSize = 0.5f;
-    public string speciesID;
-    public CreatureType creatureType;
+        public const float EatingRange = 3f;
+        public const float ChompSize = 0.5f;
+        public string speciesID;
+        public CreatureType creatureType;
 
-    public float startThirst;
-    public float maxThirst;
+        public float startThirst;
+        public float maxThirst;
 
-    public float startReproductionNeed;
-    public float reproductionNeed;
-
-
-    public float startEyesight;
-    public float eyesight;
-
-    public float startEatingSpeed;
-    public float eatingSpeed;
-
-    public bool isMale;
-    public bool isHidden;
-    public bool isHerbivore;
-    public bool isRunning;
-    public bool isAlert;
-
-    public AIPath aiPath;
-    public Seeker seeker;
-    public Vector3 lastFoodPosition;
-    public Vector3 lastWaterPosition;
-
-    public Action onDrinkingFinsihed;
-
-    public StateController stateController;
-    public bool alreadyEating;
-    public bool alreadyDrinking;
-
-    [HideInInspector] public RVOController rvoController;
-    public Corpse lastCorpse;
-    private INeedsDecay _needsDecayBehaviour;
-    private IPredatorAwareness _predatorAwareness;
-    private INeedsUI _needsUI;
+        public float startReproductionNeed;
+        public float reproductionNeed;
 
 
-    private float _speed;
+        public float startEyesight;
+        public float eyesight;
+
+        public float startEatingSpeed;
+        public float eatingSpeed;
+
+        public bool isMale;
+        public bool isHidden;
+        public bool isHerbivore;
+        public bool isRunning;
+        public bool isAlert;
+
+        public AIPath aiPath;
+        public Seeker seeker;
+        public Vector3 lastFoodPosition;
+        public Vector3 lastWaterPosition;
+
+        public Action OnDrinkingFinished;
+
+        public StateController stateController;
+        public bool alreadyEating;
+        public bool alreadyDrinking;
+
+        [HideInInspector] public RVOController rvoController;
+        public Corpse lastCorpse;
+        private INeedsDecay _needsDecayBehaviour;
+        private IPredatorAwareness _predatorAwareness;
+        private INeedsUI _needsUI;
 
 
-    // ReSharper disable once UnusedMember.Global
-    public IMateSeeker AISeeker;
+        private float _speed;
 
 
-    public IEatingBehaviour EatingBehaviour;
+        // ReSharper disable once UnusedMember.Global
+        public IMateSeeker AISeeker;
 
-    public CustomTile LastFoodTile;
-    public IMovingBehaviour MovingBehaviour;
-    public IRepeatMove RepeatMoveBehaviour;
-    public CreatureState state;
-    public IHungerSystem HungerSystem;
+
+        public IEatingBehaviour EatingBehaviour;
+
+        public CustomTile LastFoodTile;
+        public IMovingBehaviour MovingBehaviour;
+        public IRepeatMove RepeatMoveBehaviour;
+        public CreatureState state;
+        public IHungerSystem HungerSystem;
     
-    public Action DeathAction;
+        public Action DeathAction;
 
-    public Creature(IHungerSystem hungerSystem)
-    {
-        HungerSystem = hungerSystem;
-    }
-
-    public float Speed
-    {
-        private set
+        public Creature(IHungerSystem hungerSystem)
         {
-            aiPath.maxSpeed = value;
-            _speed = value;
+            HungerSystem = hungerSystem;
         }
-        get => _speed;
-    }
 
-    public float hunger => HungerSystem.GetHunger();
-    public float thirst => HungerSystem.GetThirst();
-
-    public GOStatContainer GetStats { get; private set; }
-
-    protected void Start()
-    {
-        if (isMale) this.name = $"{this.name} (Male)";
-        DeathAction += Die;
-        
-        GetStats = GetComponent<GOStatContainer>();
-        aiPath = GetComponent<AIPath>();
-        seeker = GetComponent<Seeker>();
-        EatingBehaviour = GetComponent<IEatingBehaviour>();
-        _needsDecayBehaviour = GetComponent<INeedsDecay>();
-        rvoController = GetComponent<RVOController>();
-        MovingBehaviour = GetComponent<IMovingBehaviour>();
-        RepeatMoveBehaviour = GetComponent<IRepeatMove>();
-        _needsUI = GetComponent<INeedsUI>();
-        stateController = GetComponent<StateController>();
-        HungerSystem = GetComponent<IHungerSystem>();
-        
-        foreach (IReceiveDeathAction receiver in GetComponents<IReceiveDeathAction>())
+        public float Speed
         {
-            receiver.SetDeathAction(DeathAction);
+            private set
+            {
+                aiPath.maxSpeed = value;
+                _speed = value;
+            }
+            get => _speed;
         }
-        
-        foreach (IReceiveStatContainer receiver in GetComponents<IReceiveStatContainer>())
+
+        public float hunger => HungerSystem.GetHunger();
+        public float thirst => HungerSystem.GetThirst();
+
+        public GOStatContainer GetStats { get; private set; }
+
+        protected void Start()
         {
-            receiver.SetStatContainer(GetStats);
-        }
+            if (isMale) this.name = $"{this.name} (Male)";
+            DeathAction += Die;
+        
+            GetStats = GetComponent<GOStatContainer>();
+            aiPath = GetComponent<AIPath>();
+            seeker = GetComponent<Seeker>();
+            EatingBehaviour = GetComponent<IEatingBehaviour>();
+            _needsDecayBehaviour = GetComponent<INeedsDecay>();
+            rvoController = GetComponent<RVOController>();
+            MovingBehaviour = GetComponent<IMovingBehaviour>();
+            RepeatMoveBehaviour = GetComponent<IRepeatMove>();
+            _needsUI = GetComponent<INeedsUI>();
+            stateController = GetComponent<StateController>();
+            HungerSystem = GetComponent<IHungerSystem>();
+        
+            foreach (IReceiveDeathAction receiver in GetComponents<IReceiveDeathAction>())
+            {
+                receiver.SetDeathAction(DeathAction);
+            }
+        
+            foreach (IReceiveStatContainer receiver in GetComponents<IReceiveStatContainer>())
+            {
+                receiver.SetStatContainer(GetStats);
+            }
         
 
 
-        InitializeStartingStats();
-        aiPath.maxSpeed = Speed;
+            InitializeStartingStats();
+            aiPath.maxSpeed = Speed;
 
-        InvokeRepeating(nameof(NeedsDecay), 0, 0.5f);
-        if (isHerbivore)
-        {
-            _predatorAwareness = GetComponent<IPredatorAwareness>();
-            StartCoroutine(_predatorAwareness.BeAware(this));
+            InvokeRepeating(nameof(NeedsDecay), 0, 0.5f);
+            if (isHerbivore)
+            {
+                _predatorAwareness = GetComponent<IPredatorAwareness>();
+                StartCoroutine(_predatorAwareness.BeAware(this));
+            }
         }
-    }
 
-    private void OnDestroy()
-    {
-        CreatureList.Instance.allCreatures.Remove(this);
-    }
+        private void OnDestroy()
+        {
+            CreatureList.Instance.allCreatures.Remove(this);
+        }
 
-    public void Hide()
-    {
-        Color color = GetComponent<SpriteRenderer>().color;
-        color.a = HiddenAlpha;
+        public void Hide()
+        {
+            Color color = GetComponent<SpriteRenderer>().color;
+            color.a = HiddenAlpha;
 
-        GetComponent<SpriteRenderer>().color = color;
+            GetComponent<SpriteRenderer>().color = color;
 
-        isHidden = true;
-    }
+            isHidden = true;
+        }
 
-    public void ShowYourself()
-    {
-        Color color = GetComponent<SpriteRenderer>().color;
-        color.a = NotHiddenAlpha;
+        public void ShowYourself()
+        {
+            Color color = GetComponent<SpriteRenderer>().color;
+            color.a = NotHiddenAlpha;
 
-        GetComponent<SpriteRenderer>().color = color;
+            GetComponent<SpriteRenderer>().color = color;
 
-        isHidden = false;
-    }
-
-
-    private void InitializeStartingStats()
-    {
-        CreatureList.Instance.allCreatures.Add(this);
-        Speed = GetStats.GetStat(StatName.BaseSpeed);
-        eyesight = startEyesight;
-
-        reproductionNeed = startReproductionNeed + Random.Range(5f, 10f);
-        aiPath.maxSpeed = Speed;
-        eatingSpeed = startEatingSpeed;
-        alreadyEating = false;
-        maxThirst = GlobalValues.Instance.maxThirstDeathThreshold;
-    }
+            isHidden = false;
+        }
 
 
-    protected void NeedsDecay()
-    {
-        _needsDecayBehaviour.NeedsDecayTick(GetStats, state);
-        _needsUI.UpdateThirst(thirst, maxThirst);
+        private void InitializeStartingStats()
+        {
+            CreatureList.Instance.allCreatures.Add(this);
+            Speed = GetStats.GetStat(StatName.BaseSpeed);
+            eyesight = startEyesight;
 
-        CheckForDying();
-    }
+            reproductionNeed = startReproductionNeed + Random.Range(5f, 10f);
+            aiPath.maxSpeed = Speed;
+            eatingSpeed = startEatingSpeed;
+            alreadyEating = false;
+            maxThirst = GlobalValues.Instance.maxThirstDeathThreshold;
+        }
 
-    private void CheckForDying()
-    {
-        if (maxThirst - thirst < GlobalValues.Instance.globalThirstDecay)
-            Die();
-    }
 
-    public void Die()
-    {
-        CreateCorpse();
-        Destroy(gameObject);
-    }
+        protected void NeedsDecay()
+        {
+            _needsDecayBehaviour.NeedsDecayTick(GetStats, state);
+            _needsUI.UpdateThirst(thirst, maxThirst);
 
-    private void CreateCorpse()
-    {
-        CorpseSpawner.Instance.CreateCorpse(this);
-    }
+            CheckForDying();
+        }
 
-    public void StartRunning()
-    {
-        if (isRunning) return;
-        state = CreatureState.Sprinting;
-        isRunning = true;
-        Speed = GetStats.GetStat(StatName.SprintSpeed);
-    }
+        private void CheckForDying()
+        {
+            if (maxThirst - thirst < GlobalValues.Instance.globalThirstDecay)
+                Die();
+        }
 
-    public void StopRunning()
-    {
-        if (!isRunning) return;
-        state = CreatureState.Running;
-        isRunning = false;
-        Speed = GetStats.GetStat(StatName.BaseSpeed);
-    }
+        public void Die()
+        {
+            CreateCorpse();
+            Destroy(gameObject);
+        }
 
-    public float ReturnCorpseSize()
-    {
-        return GetStats.GetStat(StatName.Weight);
+        private void CreateCorpse()
+        {
+            CorpseSpawner.Instance.CreateCorpse(this);
+        }
+
+        public void StartRunning()
+        {
+            if (isRunning) return;
+            state = CreatureState.Sprinting;
+            isRunning = true;
+            Speed = GetStats.GetStat(StatName.SprintSpeed);
+        }
+
+        public void StopRunning()
+        {
+            if (!isRunning) return;
+            state = CreatureState.Running;
+            isRunning = false;
+            Speed = GetStats.GetStat(StatName.BaseSpeed);
+        }
+
+        public float ReturnCorpseSize()
+        {
+            return GetStats.GetStat(StatName.Weight);
+        }
     }
 }

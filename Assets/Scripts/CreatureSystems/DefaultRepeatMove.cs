@@ -1,31 +1,35 @@
 ﻿using System.Collections;
+using Ai;
 using UnityEngine;
 
-public class DefaultRepeatMove : MonoBehaviour, IRepeatMove
+namespace CreatureSystems
 {
-    private Coroutine _repeatMove;
-
-    public void StartRepeatMove(Creature creature, Transform transformToFollow)
+    public class DefaultRepeatMove : MonoBehaviour, IRepeatMove
     {
-        if (_repeatMove != null)
-            StopCoroutine(_repeatMove);
-        _repeatMove = StartCoroutine(RepeatMoveToObject(creature, transformToFollow));
-    }
+        private Coroutine _repeatMove;
 
-
-    public void StopRepeatMove()
-    {
-        if (_repeatMove != null)
-            StopCoroutine(_repeatMove);
-    }
-
-    private IEnumerator RepeatMoveToObject(Creature creature, Transform transform)
-    {
-        while (true)
+        public void StartRepeatMove(Creature creature, Transform transformToFollow)
         {
-            if (transform == null) break;
-            creature.MovingBehaviour.MoveToDestination(creature, transform.position);
-            yield return new WaitForSeconds(GlobalValues.Instance.repeatMoveDelay);
+            if (_repeatMove != null)
+                StopCoroutine(_repeatMove);
+            _repeatMove = StartCoroutine(RepeatMoveToObject(creature, transformToFollow));
+        }
+
+
+        public void StopRepeatMove()
+        {
+            if (_repeatMove != null)
+                StopCoroutine(_repeatMove);
+        }
+
+        private IEnumerator RepeatMoveToObject(Creature creature, Transform transform)
+        {
+            while (true)
+            {
+                if (transform == null) break;
+                creature.MovingBehaviour.MoveToDestination(creature, transform.position);
+                yield return new WaitForSeconds(GlobalValues.Instance.repeatMoveDelay);
+            }
         }
     }
 }

@@ -1,6 +1,10 @@
 ﻿using System.Collections;
+using CreatureSystems;
 
-public interface IPredatorAwareness
+namespace Ai
 {
-    IEnumerator BeAware(Creature creature);
+    public interface IPredatorAwareness
+    {
+        IEnumerator BeAware(Creature creature);
+    }
 }
