@@ -6,6 +6,6 @@ namespace Gameplay.Skills
     {
         public int Cost;
         public string Name;
-        public abstract void TakeEffect(Vector3 clickCoordinates);
+        public abstract bool TakeEffect(Vector3 clickCoordinates);
     }
 }

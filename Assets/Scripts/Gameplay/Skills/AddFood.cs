@@ -5,19 +5,18 @@ namespace Gameplay.Skills
     public class AddFood : Skill
     {
         public int AddedFood;
-        public override void TakeEffect(Vector3 clickCoordinates)
+        public override bool TakeEffect(Vector3 clickCoordinates)
         {
             CustomTile customTile = FoodController.Instance.GetFoodTileWorld(clickCoordinates);
 
             if (customTile == null)
             {
                 Debug.Log("AddFood: Tile not found");
+                return false;
             }
 
-            else
-            {
-                customTile.FoodLevel += AddedFood;
-            }
+            customTile.FoodLevel += AddedFood;
+            return true;
         }
     }
 }

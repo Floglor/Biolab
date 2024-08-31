@@ -15,26 +15,31 @@ namespace Gameplay.Skills
 
         private int _mana;
 
-        [ShowInInspector] public int Mana
+        [ShowInInspector]
+        public int Mana
         {
             get => _mana;
-            set { _mana = value;/* OnManaChanged.Invoke();*/ }
+            set
+            {
+                _mana = value;
+                OnManaChanged.Invoke(_mana);
+            }
         }
 
-        public Action OnManaChanged;
-        
+        public Action<int> OnManaChanged;
+
 
         private void UseSkill()
         {
             if (Input.GetMouseButtonDown(1)) DischargeSkill();
             if (!Input.GetMouseButtonDown(0) || _chargedSkill == null) return;
-            
+
             Vector2 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-            _chargedSkill.TakeEffect(mousePosition);
-            Mana -= _chargedSkill.Cost;
-            
+            if (_chargedSkill.TakeEffect(mousePosition))
+                Mana -= _chargedSkill.Cost;
+
             DischargeSkill();
         }
 
@@ -61,11 +66,8 @@ namespace Gameplay.Skills
             {
                 GameObject buttonObject = Instantiate(_buttonPrefab, transform);
                 buttonObject.GetComponentInChildren<TextMeshProUGUI>().SetText(skill.Name);
-                
-                buttonObject.GetComponent<Button>().onClick.AddListener(() =>
-                {
-                    ChargeSkill(skill);
-                });
+
+                buttonObject.GetComponent<Button>().onClick.AddListener(() => { ChargeSkill(skill); });
             }
         }
 

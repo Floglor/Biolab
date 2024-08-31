@@ -6,7 +6,7 @@ namespace Gameplay.Skills
 {
     public class Kill : Skill
     {
-        public override void TakeEffect(Vector3 clickCoordinates)
+        public override bool TakeEffect(Vector3 clickCoordinates)
         {
             Debug.Log($"Killing creature at ({clickCoordinates.x}, {clickCoordinates.y}");
 
@@ -16,7 +16,10 @@ namespace Gameplay.Skills
             if (hit.collider != null && hit.collider.GetComponent<Creature>() != null)
             {
                 hit.collider.GetComponent<Creature>().Die();
+                return true;
             }
+
+            return false;
         }
     }
 }

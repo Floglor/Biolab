@@ -6,9 +6,10 @@ namespace Gameplay.Skills
 {
     public class TestSkill : Skill
     {
-        public override void TakeEffect(Vector3 clickCoordinates)
+        public override bool TakeEffect(Vector3 clickCoordinates)
         {
             Debug.Log($"Test Skill fired at ({clickCoordinates.x}, {clickCoordinates.y}");
+            return true;
         }
     }
 }
