@@ -51,27 +51,28 @@ namespace CreatureSystems
 
         [HideInInspector] public RVOController rvoController;
         public Corpse lastCorpse;
-        private INeedsDecay _needsDecayBehaviour;
-        private IPredatorAwareness _predatorAwareness;
-        private INeedsUI _needsUI;
 
+        public CreatureState state;
 
         private float _speed;
 
+        public CustomTile LastFoodTile;
 
         // ReSharper disable once UnusedMember.Global
         public IMateSeeker AISeeker;
 
 
         public IEatingBehaviour EatingBehaviour;
+        private INeedsDecay _needsDecayBehaviour;
+        private IPredatorAwareness _predatorAwareness;
+        private INeedsUI _needsUI;
 
-        public CustomTile LastFoodTile;
         public IMovingBehaviour MovingBehaviour;
         public IRepeatMove RepeatMoveBehaviour;
-        public CreatureState state;
+
         public IHungerSystem HungerSystem;
-    
-        public Action DeathAction;
+
+        public Action<DeathReason> DeathAction;
 
         public Creature(IHungerSystem hungerSystem)
         {
@@ -93,11 +94,42 @@ namespace CreatureSystems
 
         public GOStatContainer GetStats { get; private set; }
 
+        public void GetRandomName()
+        {
+            string[] maleNames = 
+            {
+                "Balldwin", "Ballrick", "Ballian", "Ballfred", "Ballson",
+                "Ballard", "Ballton", "Ballford", "Ballster", "Ballmir",
+                "Ballbert", "Ballwin", "Ballander", "Ballman", "Ballrickson",
+                "Ballion", "Balltonius", "Balliam", "Ballther", "Ballmire",
+                "Ballver", "Ballthor", "Ballius", "Ballgrim", "Ballrad",
+                "Ballock", "Ballfrid", "Ballhorn", "Ballgar", "Ballionis"
+            };
+
+            string[] femaleNames = 
+            {
+                "Balleena", "Ballina", "Ballis", "Ballissa", "Ballora",
+                "Ballette", "Balloraine", "Ballia", "Ballerina", "Ballinda",
+                "Ballora", "Ballisandra", "Ballinae", "Balliana", "Ballith",
+                "Ballerica", "Balliandra", "Ballanette", "Balluna", "Ballanda",
+                "Ballinda", "Balliara", "Ballanora", "Ballalina", "Ballessa",
+                "Ballastra", "Ballira", "Balletina", "Ballithra", "Balleisha"
+            };
+
+            
+            
+            string[] selectedNames = isMale ? maleNames : femaleNames;
+
+            string creatureName = selectedNames[Random.Range(0, selectedNames.Length)];
+
+            gameObject.name = creatureName;
+        }
         protected void Start()
         {
+            GetRandomName();
             if (isMale) this.name = $"{this.name} (Male)";
             DeathAction += Die;
-        
+
             GetStats = GetComponent<GOStatContainer>();
             aiPath = GetComponent<AIPath>();
             seeker = GetComponent<Seeker>();
@@ -109,17 +141,16 @@ namespace CreatureSystems
             _needsUI = GetComponent<INeedsUI>();
             stateController = GetComponent<StateController>();
             HungerSystem = GetComponent<IHungerSystem>();
-        
+
             foreach (IReceiveDeathAction receiver in GetComponents<IReceiveDeathAction>())
             {
                 receiver.SetDeathAction(DeathAction);
             }
-        
+
             foreach (IReceiveStatContainer receiver in GetComponents<IReceiveStatContainer>())
             {
                 receiver.SetStatContainer(GetStats);
             }
-        
 
 
             InitializeStartingStats();
@@ -135,7 +166,7 @@ namespace CreatureSystems
 
         private void OnDestroy()
         {
-            CreatureList.Instance.allCreatures.Remove(this);
+            CreatureList.Instance.RemoveCreature(this);
         }
 
         public void Hide()
@@ -158,10 +189,13 @@ namespace CreatureSystems
             isHidden = false;
         }
 
+        private void Awake()
+        {
+            CreatureList.Instance.RegisterCreature(this);
+        }
 
         private void InitializeStartingStats()
         {
-            CreatureList.Instance.allCreatures.Add(this);
             Speed = GetStats.GetStat(StatName.BaseSpeed);
             eyesight = startEyesight;
 
@@ -187,10 +221,12 @@ namespace CreatureSystems
                 Die();
         }
 
-        public void Die()
+        public void Die(DeathReason deathReason = DeathReason.Cringe)
         {
             CreateCorpse();
             Destroy(gameObject);
+
+            Debug.Log($"Creature {name} died of {Enum.GetName(typeof(DeathReason), deathReason)}");
         }
 
         private void CreateCorpse()

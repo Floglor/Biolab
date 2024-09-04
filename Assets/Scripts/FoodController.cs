@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -41,6 +42,10 @@ public class FoodController : MonoBehaviour
         UpdateFood();
     }
 
+    public float GetTotalFood()
+    {
+        return _foodTiles.Sum(customTile => customTile.FoodLevel);
+    }
     public CustomTile GetFoodTileWorld(Vector3 position)
     {
         foreach (CustomTile customTile in _foodTiles)

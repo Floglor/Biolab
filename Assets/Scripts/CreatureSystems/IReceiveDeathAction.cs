@@ -4,6 +4,6 @@ namespace CreatureSystems
 {
     public interface IReceiveDeathAction
     {
-        void SetDeathAction(Action deathAction);
+        void SetDeathAction(Action<DeathReason> deathAction);
     }
 }

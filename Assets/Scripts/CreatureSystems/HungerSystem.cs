@@ -10,7 +10,7 @@ namespace CreatureSystems
     {
         private const float MAX_HUNGER = 100f;
         private GOStatContainer _statContainer;
-        private Action _deathAction;
+        private Action<DeathReason> _deathAction;
 
         [ShowInInspector] [ReadOnly] private float _timeSinceLastDecay;
         [ShowInInspector] [ReadOnly] private int _hungerDC;
@@ -62,13 +62,16 @@ namespace CreatureSystems
 
         public void PerformDeathCheck()
         {
-            if (_statContainer.GetStat(StatName.Hunger) >= MAX_HUNGER)
+            if (_statContainer.GetStat(StatName.Hunger) >= MAX_HUNGER ||
+                _statContainer.GetStat(StatName.Thirst) >= MAX_HUNGER)
             {
                 int roll = Roll3d6();
 
                 if (roll > _hungerDC)
                 {
-                    _deathAction?.Invoke();
+                    _deathAction?.Invoke(_statContainer.GetStat(StatName.Hunger) >= MAX_HUNGER
+                        ? DeathReason.Hunger
+                        : DeathReason.Thirst);
                 }
             }
         }
@@ -89,13 +92,13 @@ namespace CreatureSystems
         {
             return _statContainer.GetStat(StatName.Hunger);
         }
-        
+
         public float GetThirst()
         {
             return _statContainer.GetStat(StatName.Thirst);
         }
 
-        public void SetDeathAction(Action deathAction)
+        public void SetDeathAction(Action<DeathReason> deathAction)
         {
             _deathAction = deathAction;
         }

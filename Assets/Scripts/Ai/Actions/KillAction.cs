@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CreatureSystems;
+using UnityEngine;
 
 namespace Ai.Actions
 {
@@ -7,7 +8,7 @@ namespace Ai.Actions
     {
         public override void Act(StateController controller)
         {
-            controller.targetCreature.Die();
+            controller.targetCreature.Die(DeathReason.BeingKilled);
         }
     }
 }

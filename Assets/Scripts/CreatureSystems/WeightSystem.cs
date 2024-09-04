@@ -19,7 +19,7 @@ namespace CreatureSystems
         [ShowInInspector] [ReadOnly] private float _calories;
         [ShowInInspector] [ReadOnly] private float _energyConsumptionPerSecond;
 
-        private Action _deathAction;
+        private Action<DeathReason> _deathAction;
 
         [Button]
         private void SetCaloriesToZero()
@@ -45,7 +45,7 @@ namespace CreatureSystems
                     GlobalValues.Instance.minimumWeightThreshold || _isDeathEventFired)
                 {
                     Debug.Log($"creature {gameObject.name} is below the minimum weight!");
-                    _deathAction.Invoke();
+                    _deathAction.Invoke(DeathReason.WeightLoss);
                     _isDeathEventFired = true;
                 }
             }
