@@ -17,6 +17,7 @@ public class CorpseSpawner : MonoBehaviour
         corpse.GetComponent<Corpse>().startSize = size;
         corpse.GetComponent<Corpse>().age = 0;
         FoodController.Instance.corpses.Add(corpse.GetComponent<Corpse>());
+        FoodController.Instance.OnCorpseCreated.Invoke();
     }
 
     public void CreateCorpse(Creature creature)
@@ -27,5 +28,7 @@ public class CorpseSpawner : MonoBehaviour
         corpse.GetComponent<Corpse>().startSize = creature.ReturnCorpseSize();
         corpse.GetComponent<Corpse>().age = 0;
         FoodController.Instance.corpses.Add(corpse.GetComponent<Corpse>());
+        FoodController.Instance.OnCorpseCreated.Invoke();
+
     }
 }

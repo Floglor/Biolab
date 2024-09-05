@@ -11,8 +11,8 @@ namespace Ai.Decisions
             return controller.timersHandler.GetOrCreateTimer(TimerName.Mating, GlobalValues.Instance
                        .searchMateDelay).TimerIsRunning != true &&
                    !(controller.actingCreature.reproductionNeed <= GlobalValues.Instance.matingNeedHighTreshold) &&
-                   !(controller.actingCreature.reproductionNeed < controller.actingCreature.thirst) &&
-                   !(controller.actingCreature.reproductionNeed < controller.actingCreature.hunger);
+                   !(controller.actingCreature.reproductionNeed < controller.actingCreature.Thirst) &&
+                   !(controller.actingCreature.reproductionNeed < controller.actingCreature.Hunger);
         }
     }
 }

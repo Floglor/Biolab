@@ -8,8 +8,8 @@ namespace Ai.Decisions
     {
         public override bool Decide(StateController controller)
         {
-            if (controller.actingCreature.thirst <= GlobalValues.Instance.basicNeedLowThreshold ||
-                controller.actingCreature.thirst < controller.actingCreature.hunger) return false;
+            if (controller.actingCreature.Thirst <= GlobalValues.Instance.basicNeedLowThreshold ||
+                controller.actingCreature.Thirst < controller.actingCreature.Hunger) return false;
             bool waterVisible = SearchForWater(controller);
             return waterVisible;
         }

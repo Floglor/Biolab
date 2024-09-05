@@ -10,7 +10,7 @@ namespace CreatureSystems
         {
             while (true)
             {
-                if (creature.thirst >= GlobalValues.Instance.basicNeedHighThreshold)
+                if (creature.Thirst >= GlobalValues.Instance.basicNeedHighThreshold)
                     yield return new WaitForSeconds(GlobalValues.Instance.predatorAwarenessDelay);
                 //if (TimerCheck(creature)) yield return new WaitForSeconds(GlobalValues.instance.predatorAwarenessDelay);
                 Vector3 position = creature.transform.position;

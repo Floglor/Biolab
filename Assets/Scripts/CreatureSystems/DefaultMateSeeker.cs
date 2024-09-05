@@ -38,8 +38,8 @@ namespace CreatureSystems
 
         public void BeTargeted(Creature targetCreature, Creature targetingCreature)
         {
-            if (!(targetCreature.hunger <= GlobalValues.Instance.basicNeedHighThreshold) ||
-                !(targetCreature.thirst <= GlobalValues.Instance.basicNeedHighThreshold)) return;
+            if (!(targetCreature.Hunger <= GlobalValues.Instance.basicNeedHighThreshold) ||
+                !(targetCreature.Thirst <= GlobalValues.Instance.basicNeedHighThreshold)) return;
 
             targetCreature.stateController.lastTargetedMate = targetingCreature;
             targetCreature.stateController.targetCreature = targetingCreature;
@@ -65,9 +65,9 @@ namespace CreatureSystems
                     {
                         if (creature.stateController.lastTargetedMate == null)
                         {
-                            if (creature.thirst <= GlobalValues.Instance.basicNeedHighThreshold)
+                            if (creature.Thirst <= GlobalValues.Instance.basicNeedHighThreshold)
                             {
-                                if (creature.hunger <= GlobalValues.Instance.basicNeedHighThreshold)
+                                if (creature.Hunger <= GlobalValues.Instance.basicNeedHighThreshold)
                                 {
                                     if (creature.stateController.currentState == creature.stateController.initialState ||
                                         creature.stateController.currentState == creature.stateController.lookForMateState)

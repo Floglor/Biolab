@@ -11,8 +11,8 @@ namespace Ai.Decisions
         {
             return !controller.timersHandler.GetOrCreateTimer(TimerName.Hunt, GlobalValues.Instance.huntCooldown)
                        .TimerIsRunning &&
-                   !(controller.actingCreature.hunger <= GlobalValues.Instance.minHuntDecisionHungerThreshold) &&
-                   !(controller.actingCreature.hunger < controller.actingCreature.thirst) &&
+                   !(controller.actingCreature.Hunger <= GlobalValues.Instance.minHuntDecisionHungerThreshold) &&
+                   !(controller.actingCreature.Hunger < controller.actingCreature.Thirst) &&
                    (FoodController.Instance.corpses.IsEmpty());
         }
     }

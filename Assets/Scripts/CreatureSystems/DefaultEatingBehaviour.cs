@@ -31,6 +31,8 @@ namespace CreatureSystems
             if (_gulpCoroutine != null)
                 StopCoroutine(_gulpCoroutine);
             creature.alreadyDrinking = false;
+            creature.OnDrinkingFinished.Invoke();
+
         }
 
         private void ReturnToFoodSearch(Creature creature)
@@ -46,7 +48,7 @@ namespace CreatureSystems
                 creature.alreadyEating = true;
 
                 if (creature.LastFoodTile.GetEaten(Creature.ChompSize, creature.transform.position) &&
-                    creature.hunger >= 2f)
+                    creature.Hunger >= 2f)
                 {
                     creature.HungerSystem.SatisfyHunger(Creature.ChompSize);
                     yield return new WaitForSeconds(1/creature.eatingSpeed / Time.timeScale);
@@ -68,7 +70,7 @@ namespace CreatureSystems
                 creature.alreadyDrinking = true;
 
 
-                if (creature.thirst >= 2f)
+                if (creature.Thirst >= 2f)
                 {
                     creature.HungerSystem.SatisfyThirst(Creature.ChompSize);
                     yield return new WaitForSeconds(1/creature.eatingSpeed / Time.timeScale);

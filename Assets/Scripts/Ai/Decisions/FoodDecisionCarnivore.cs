@@ -10,8 +10,8 @@ namespace Ai.Decisions
 
         public override bool Decide(StateController controller)
         {
-            if (controller.actingCreature.hunger <= GlobalValues.Instance.basicNeedLowThreshold ||
-                controller.actingCreature.hunger < controller.actingCreature.thirst) return false;
+            if (controller.actingCreature.Hunger <= GlobalValues.Instance.basicNeedLowThreshold ||
+                controller.actingCreature.Hunger < controller.actingCreature.Thirst) return false;
             bool foodVisible = SearchForFood(controller);
             return foodVisible;
         }

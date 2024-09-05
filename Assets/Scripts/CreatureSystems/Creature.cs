@@ -89,8 +89,8 @@ namespace CreatureSystems
             get => _speed;
         }
 
-        public float hunger => HungerSystem.GetHunger();
-        public float thirst => HungerSystem.GetThirst();
+        public float Hunger => HungerSystem.GetHunger();
+        public float Thirst => HungerSystem.GetThirst();
 
         public GOStatContainer GetStats { get; private set; }
 
@@ -210,17 +210,9 @@ namespace CreatureSystems
         protected void NeedsDecay()
         {
             _needsDecayBehaviour.NeedsDecayTick(GetStats, state);
-            _needsUI.UpdateThirst(thirst, maxThirst);
-
-            CheckForDying();
+            _needsUI.UpdateThirst(Thirst, maxThirst);
         }
-
-        private void CheckForDying()
-        {
-            if (maxThirst - thirst < GlobalValues.Instance.globalThirstDecay)
-                Die();
-        }
-
+        
         public void Die(DeathReason deathReason = DeathReason.Cringe)
         {
             CreateCorpse();

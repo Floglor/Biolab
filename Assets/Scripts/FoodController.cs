@@ -20,6 +20,8 @@ public class FoodController : MonoBehaviour
     private TilemapRenderer _tilemapRenderer;
     private float _updateFoodRealTimer;
 
+    public Action OnCorpseCreated;
+
     
     private void Awake()
     {
@@ -46,6 +48,8 @@ public class FoodController : MonoBehaviour
     {
         return _foodTiles.Sum(customTile => customTile.FoodLevel);
     }
+    
+
     public CustomTile GetFoodTileWorld(Vector3 position)
     {
         foreach (CustomTile customTile in _foodTiles)

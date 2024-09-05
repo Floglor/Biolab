@@ -8,7 +8,7 @@ namespace Ai.Decisions
     {
         public override bool Decide(StateController controller)
         {
-            return controller.actingCreature.thirst >= GlobalValues.Instance.basicNeedHighThreshold;
+            return controller.actingCreature.Thirst >= GlobalValues.Instance.basicNeedHighThreshold;
         }
     }
 }

@@ -21,6 +21,7 @@ public class Corpse : MonoBehaviour
     private void OnDestroy()
     {
         FoodController.Instance.corpses.Remove(this);
+        FoodController.Instance.OnCorpseCreated.Invoke();
     }
 
     public bool GetEaten(float chompSize, Vector3 position)

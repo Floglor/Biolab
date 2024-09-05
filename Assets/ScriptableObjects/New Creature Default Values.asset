@@ -31,11 +31,11 @@ MonoBehaviour:
   StartingCalories: 20000
   MaxCalorieCount: 539000
   MetabolismRatePerSec: 0.028935185
-  Hunger: 0
+  Hunger: 50
   MaxHunger: 100
-  Thirst: 0
+  Thirst: 50
   MaxThirst: 100
   HungerDecay: 0.1
-  CaloriesToHungerConversionRate: 5
+  CaloriesToHungerConversionRate: 0.1
   HungerDC: 14
   HungerDecayInterval: 60

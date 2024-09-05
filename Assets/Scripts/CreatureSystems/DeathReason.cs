@@ -7,6 +7,5 @@
         BeingKilled,
         Thirst,
         WeightLoss
-        
     }
 }

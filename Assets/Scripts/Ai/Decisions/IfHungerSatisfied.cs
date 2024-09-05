@@ -8,7 +8,7 @@ namespace Ai.Decisions
     {
         public override bool Decide(StateController controller)
         {
-            return controller.actingCreature.hunger <= 5f;
+            return controller.actingCreature.Hunger <= 5f;
         }
     }
 }
