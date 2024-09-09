@@ -68,6 +68,8 @@ namespace CreatureSystems
                     creature.Hunger >= 2f)
                 {
                     creature.HungerSystem.SatisfyHunger(Creature.ChompSize);
+                    creature.WeightSystem.GainCalories(Creature.ChompSize);
+                    
 
                     yield return new WaitForSeconds(1/creature.eatingSpeed / Time.timeScale);
                 }

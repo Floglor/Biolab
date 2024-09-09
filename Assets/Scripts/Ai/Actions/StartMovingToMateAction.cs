@@ -7,6 +7,8 @@ namespace Ai.Actions
     {
         public override void Act(StateController controller)
         {
+            if (controller.lastTargetedMate == null) return;
+            
             controller.actingCreature.MovingBehaviour.MoveToDestination(controller.actingCreature,
                 controller.lastTargetedMate.transform.position);
         }

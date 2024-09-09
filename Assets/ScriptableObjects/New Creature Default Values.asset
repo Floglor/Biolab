@@ -28,14 +28,18 @@ MonoBehaviour:
   RunSpeedMultiplier: 1
   SprintSpeedMultiplier: 1.5
   EnergyConsumptionMultiplier: 1
-  StartingCalories: 20000
-  MaxCalorieCount: 539000
-  MetabolismRatePerSec: 0.028935185
+  StartingCalories: 200
+  MaxCalorieCount: 5390
+  MetabolismRatePerSec: 0.5
   Hunger: 50
   MaxHunger: 100
   Thirst: 50
   MaxThirst: 100
   HungerDecay: 0.1
-  CaloriesToHungerConversionRate: 0.1
+  CaloriesToHungerConversionRate: 10
   HungerDC: 14
   HungerDecayInterval: 60
+  ReproductionNeed: 0
+  MaxReproductionNeed: 100
+  ReproductionNeedDecay: 0.2
+  PerfectCalorieCount: 200

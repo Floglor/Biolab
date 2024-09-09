@@ -24,7 +24,7 @@ namespace Ai.Decisions
 
             if (foodTile == null)
             {
-                Debug.Log("Can't find food!");
+                //Debug.Log("Can't find food!");
                 return false;
             }
 

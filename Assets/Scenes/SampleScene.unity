@@ -38084,8 +38084,8 @@ MonoBehaviour:
   maxHungerDeathThreshold: 100
   maxThirstDeathThreshold: 100
   minHuntDecisionHungerThreshold: 30
-  minimumWeightThreshold: 0
-  weightToCalorieRatio: 0
+  minimumWeightThreshold: 0.2
+  weightToCalorieRatio: 20
   corpseMaxAge: 1500
   runningThirstDecay: 2
   runningSpeedMultiplier: 1.5

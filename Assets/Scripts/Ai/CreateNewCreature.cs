@@ -13,8 +13,9 @@ namespace Ai
             CreatureSpawner.Instance.SpawnNewCreature(controller.actingCreature, controller.lastTargetedMate,
                 (Vector3) Random.insideUnitCircle + controller.actingCreature.transform.position);
 
-            controller.actingCreature.reproductionNeed = 0f;
-            controller.lastTargetedMate.reproductionNeed = 0f;
+            controller.actingCreature.ResetReproductionNeed();
+            controller.lastTargetedMate.ResetReproductionNeed();
+            
             controller.lastTargetedMate = null;
             controller.targetCreature = null;
         }

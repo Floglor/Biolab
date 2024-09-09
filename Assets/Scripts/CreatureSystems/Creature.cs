@@ -15,22 +15,20 @@ namespace CreatureSystems
         private const int NotHiddenAlpha = 255;
 
         public const float EatingRange = 3f;
-        public const float ChompSize = 0.5f;
+        public const float ChompSize = 2f;
         public string speciesID;
         public CreatureType creatureType;
 
-        public float startThirst;
         public float maxThirst;
 
-        public float startReproductionNeed;
-        public float reproductionNeed;
+        public float ReproductionNeed => GetStats.GetStat(StatName.ReproductionNeed);
 
 
         public float startEyesight;
         public float eyesight;
 
         public float startEatingSpeed;
-        public float eatingSpeed;
+        [HideInInspector] public float eatingSpeed;
 
         public bool isMale;
         public bool isHidden;
@@ -71,6 +69,7 @@ namespace CreatureSystems
         public IRepeatMove RepeatMoveBehaviour;
 
         public IHungerSystem HungerSystem;
+        public IWeightSystem WeightSystem;
 
         public Action<DeathReason> DeathAction;
 
@@ -92,8 +91,15 @@ namespace CreatureSystems
         public float Hunger => HungerSystem.GetHunger();
         public float Thirst => HungerSystem.GetThirst();
 
+       
+
+
         public GOStatContainer GetStats { get; private set; }
 
+        public void ResetReproductionNeed()
+        {
+            GetStats.AddToStat(StatName.ReproductionNeed, -GetStats.GetStat(StatName.ReproductionNeed));
+        }
         public void GetRandomName()
         {
             string[] maleNames = 
@@ -141,6 +147,7 @@ namespace CreatureSystems
             _needsUI = GetComponent<INeedsUI>();
             stateController = GetComponent<StateController>();
             HungerSystem = GetComponent<IHungerSystem>();
+            WeightSystem = GetComponent<IWeightSystem>();
 
             foreach (IReceiveDeathAction receiver in GetComponents<IReceiveDeathAction>())
             {
@@ -199,7 +206,6 @@ namespace CreatureSystems
             Speed = GetStats.GetStat(StatName.BaseSpeed);
             eyesight = startEyesight;
 
-            reproductionNeed = startReproductionNeed + Random.Range(5f, 10f);
             aiPath.maxSpeed = Speed;
             eatingSpeed = startEatingSpeed;
             alreadyEating = false;
@@ -244,7 +250,7 @@ namespace CreatureSystems
 
         public float ReturnCorpseSize()
         {
-            return GetStats.GetStat(StatName.Weight);
+            return GetStats.GetStat(StatName.Calories)/2;
         }
     }
 }

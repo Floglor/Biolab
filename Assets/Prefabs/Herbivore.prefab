@@ -466,7 +466,7 @@ MonoBehaviour:
   startEyesight: 6
   eyesight: 0
   startEatingSpeed: 3
-  eatingSpeed: 0
+  eatingSpeed: 1
   isMale: 0
   isHidden: 0
   isHerbivore: 1

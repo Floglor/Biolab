@@ -6,7 +6,7 @@ using UnityEngine;
 namespace CreatureSystems
 {
     [RequireComponent(typeof(Creature))]
-    public class WeightSystem : MonoBehaviour
+    public class WeightSystem : MonoBehaviour, IWeightSystem
     {
         private GOStatContainer _statContainer;
 
@@ -20,6 +20,8 @@ namespace CreatureSystems
         [ShowInInspector] [ReadOnly] private float _energyConsumptionPerSecond;
 
         private Action<DeathReason> _deathAction;
+
+        [ShowInInspector] private float _nourishment = 0;
 
         [Button]
         private void SetCaloriesToZero()
@@ -39,8 +41,7 @@ namespace CreatureSystems
             {
                 _statContainer.AddToStat(StatName.Calories, amount * GlobalValues.Instance.weightToCalorieRatio);
                 _statContainer.AddToStat(StatName.Weight, -amount);
-
-
+                
                 if (_statContainer.GetStat(StatName.Weight) < _statContainer.GetStat(StatName.MaxWeight) *
                     GlobalValues.Instance.minimumWeightThreshold || _isDeathEventFired)
                 {
@@ -76,12 +77,19 @@ namespace CreatureSystems
             _calories = _statContainer.GetStat(StatName.Calories);
         }
 
+        private float RecalculateNourishment()
+        {
+            return (_statContainer.GetStat(StatName.Calories) /
+                    _statContainer.GetStat(StatName.PerfectCalorieCount)) * 100f;
+        }
+
         private void LoseCalories()
         {
             _statContainer.AddToStat(StatName.Calories,
                 -_statContainer.GetStat(StatName.EnergyConsumptionPerSecond) * Time.deltaTime);
             
             _energyConsumptionPerSecond = _statContainer.GetStat(StatName.EnergyConsumptionPerSecond);
+            _nourishment = RecalculateNourishment();
         }
 
         private void Start()
@@ -101,6 +109,12 @@ namespace CreatureSystems
         {
             _statContainer.AddToStat(StatName.Calories, calories);
             HandleExcessCalories();
+            _nourishment = RecalculateNourishment();
         }
+    }
+
+    public interface IWeightSystem
+    {
+        public void GainCalories(float calories);
     }
 }

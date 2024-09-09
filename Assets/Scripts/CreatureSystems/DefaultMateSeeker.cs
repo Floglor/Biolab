@@ -27,7 +27,7 @@ namespace CreatureSystems
             if (sortedCreatureList.IsNullOrEmpty())
             {
                 creature.stateController.timersHandler.ResetTimer(TimerName.Mating);
-                Debug.Log($"Creature {creature.name} can't find a mate");
+                //Debug.Log($"Creature {creature.name} can't find a mate");
                 return null;
             }
 
@@ -93,9 +93,9 @@ namespace CreatureSystems
             float maxReproductionNeed = Mathf.NegativeInfinity;
 
             foreach (Creature sortingCreature in sortedCreatureList.Where(sortingCreature =>
-                         sortingCreature.reproductionNeed > maxReproductionNeed))
+                         sortingCreature.ReproductionNeed > maxReproductionNeed))
             {
-                maxReproductionNeed = sortingCreature.reproductionNeed;
+                maxReproductionNeed = sortingCreature.ReproductionNeed;
                 maxReproductionNeedCreature = sortingCreature;
             }
 

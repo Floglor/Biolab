@@ -8,7 +8,6 @@ public class ReducedBreedFactorNeedsDecay : MonoBehaviour, INeedsDecay
         
     public void NeedsDecayTick(Creature creature)
     {
-        creature.reproductionNeed += GlobalValues.Instance.globalBreedDecay/3;   
     }
     
 
