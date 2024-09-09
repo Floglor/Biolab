@@ -19,11 +19,14 @@ namespace CreatureSystems
         [ShowInInspector] [ReadOnly] private float _hungerDebug;
         [ShowInInspector] [ReadOnly] private float _thirstDebug;
 
+        private IWeightSystem _weightSystem;
+
 
         private void Start()
         {
             _hungerDC = (int) _statContainer.GetStat(StatName.HungerDC);
             _decayInterval = _statContainer.GetStat(StatName.HungerDecayInterval);
+            _weightSystem = GetComponent<Creature>().WeightSystem;
         }
 
         private void Update()
@@ -35,13 +38,20 @@ namespace CreatureSystems
 
         public void HungerDecay()
         {
+            float nourishment = _weightSystem.ReturnNourishment();
+
+            float multiplier = 1 + 30 * Mathf.Pow((100 - nourishment) / 100, 2);
+            
+            
             float hunger = _statContainer.GetStat(StatName.Hunger);
             float thirst = _statContainer.GetStat(StatName.Thirst);
+            
+            
 
             if (hunger <= MAX_HUNGER)
             {
                 _statContainer.AddToStat(StatName.Hunger,
-                    _statContainer.GetStat(StatName.HungerDecay) * (Time.deltaTime));
+                    _statContainer.GetStat(StatName.HungerDecay) * (Time.deltaTime * multiplier));
             }
 
             if (thirst <= MAX_HUNGER)

@@ -23,6 +23,11 @@ namespace CreatureSystems
 
         [ShowInInspector] private float _nourishment = 0;
 
+        public float ReturnNourishment()
+        {
+            return _nourishment;
+        }
+
         [Button]
         private void SetCaloriesToZero()
         {
@@ -116,5 +121,6 @@ namespace CreatureSystems
     public interface IWeightSystem
     {
         public void GainCalories(float calories);
+        public float ReturnNourishment();
     }
 }
