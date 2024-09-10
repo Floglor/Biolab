@@ -56,7 +56,7 @@ namespace Stats
                 [StatName.HungerDC] = new SimpleStat(HungerDC),
                 [StatName.HungerDecayInterval] = new SimpleStat(HungerDecayInterval),
                 [StatName.ReproductionNeedDecay] = new SimpleStat(ReproductionNeedDecay),
-                [StatName.PerfectCalorieCount] = new SimpleStat(PerfectCalorieCount)
+                [StatName.PerfectCalorieCount] = new SimpleStat(PerfectCalorieCount),
             };
 
             statsDictionary[StatName.BaseSpeed] = new DerivedStat(() =>

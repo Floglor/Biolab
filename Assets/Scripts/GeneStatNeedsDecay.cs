@@ -1,13 +1,23 @@
-﻿using Ai;
+﻿using System;
+using Ai;
+using CreatureSystems;
 using Stats;
 using UnityEngine;
 
 public class GeneStatNeedsDecay : MonoBehaviour, INeedsDecay
 {
+    private IWeightSystem _weightSystem;
+
+    private void Start()
+    {
+        _weightSystem = GetComponent<IWeightSystem>();
+    }
+
     public void NeedsDecayTick(GOStatContainer statContainer, CreatureState creatureState)
     {
-        statContainer.AddToStat(StatName.ReproductionNeed, statContainer.GetStat(StatName.ReproductionNeedDecay));
-        
+        statContainer.AddToStat(StatName.ReproductionNeed,
+            statContainer.GetStat(StatName.ReproductionNeedDecay) * _weightSystem.ReturnNourishment() / 100); //Nourishment is returned in percent
+
         float energyConsumption = statContainer.GetStat(StatName.EnergyConsumptionPerSecond);
 
         float baseEnergyExpense = energyConsumption;

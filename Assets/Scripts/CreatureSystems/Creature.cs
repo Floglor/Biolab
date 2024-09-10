@@ -2,6 +2,7 @@
 using Ai;
 using Pathfinding;
 using Pathfinding.RVO;
+using Sirenix.OdinInspector;
 using Stats;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -22,7 +23,7 @@ namespace CreatureSystems
         public float maxThirst;
 
         public float ReproductionNeed => GetStats.GetStat(StatName.ReproductionNeed);
-
+        public float reproductionNeed;
 
         public float startEyesight;
         public float eyesight;
@@ -91,7 +92,10 @@ namespace CreatureSystems
         public float Hunger => HungerSystem.GetHunger();
         public float Thirst => HungerSystem.GetThirst();
 
-       
+        private void Update()
+        {
+            reproductionNeed = ReproductionNeed;
+        }
 
 
         public GOStatContainer GetStats { get; private set; }
