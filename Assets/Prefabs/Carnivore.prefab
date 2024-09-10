@@ -313,7 +313,7 @@ MonoBehaviour:
   maxThirst: 0
   startEyesight: 0
   eyesight: 0
-  startEatingSpeed: 3
+  startEatingSpeed: 0.3
   eatingSpeed: 1
   isMale: 0
   isHidden: 0

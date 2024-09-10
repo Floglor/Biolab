@@ -36,7 +36,7 @@ MonoBehaviour:
   Thirst: 50
   MaxThirst: 100
   HungerDecay: 0.1
-  CaloriesToHungerConversionRate: 10
+  CaloriesToHungerConversionRate: 5
   HungerDC: 14
   HungerDecayInterval: 60
   ReproductionNeed: 0

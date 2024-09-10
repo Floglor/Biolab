@@ -61,8 +61,8 @@ public class CreatureSpawner : MonoBehaviour
         {
             _gameConfigValues = new GameConfigValues
             {
-                CarnivoresNumber = 2,
-                HerbivoresNumber = 0,
+                CarnivoresNumber = 0,
+                HerbivoresNumber = 1,
                 MutationModifier = PlayerPrefs.GetFloat(Config.MutationModifier.ToString())
             };
         }

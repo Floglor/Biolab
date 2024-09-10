@@ -459,13 +459,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speciesID: bnnuy
   creatureType: 1
-  startThirst: 1
   maxThirst: 0
-  startReproductionNeed: 5
-  reproductionNeed: 0
   startEyesight: 6
   eyesight: 0
-  startEatingSpeed: 3
+  startEatingSpeed: 0.3
   eatingSpeed: 1
   isMale: 0
   isHidden: 0
