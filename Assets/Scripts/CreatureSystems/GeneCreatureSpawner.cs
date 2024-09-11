@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Ai;
+using Stats;
 using Stats.Genetics;
 using UnityEngine;
 
@@ -27,8 +28,17 @@ namespace CreatureSystems
 
                 chromosomePairs.Add(new ChromosomePair(motherGameteChromosome, fatherGameteChromosome));
             }
-            
+
             childGeneticAlgorithm.SetParentChromosomes(chromosomePairs);
+
+            float motherCalorieShare = mother.GetStats.GetStat(StatName.ReproductionCalorieShare);
+
+            mother.WeightSystem.LoseCalories(motherCalorieShare);
+            child.OnInitialization += () =>
+            {
+                child.GetStats.AddToStat(StatName.Calories, -child.GetStats.GetStat(StatName.Calories));
+                child.GetStats.AddToStat(StatName.Calories, motherCalorieShare);
+            };
         }
     }
 }

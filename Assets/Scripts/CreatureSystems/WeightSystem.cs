@@ -28,6 +28,11 @@ namespace CreatureSystems
             return _nourishment;
         }
 
+        public void LoseCalories(float calories)
+        {
+            GainCalories(-calories);
+        }
+
         [Button]
         private void SetCaloriesToZero()
         {
@@ -69,7 +74,7 @@ namespace CreatureSystems
                 TransferWeightToCalories(_statContainer.GetStat(StatName.MetabolismRatePerSec) * Time.deltaTime);
             }
 
-            LoseCalories();
+            CalorieDecay();
 
             _isLosingWeight = _statContainer.GetStat(StatName.Calories) < 0;
 
@@ -88,7 +93,7 @@ namespace CreatureSystems
                     _statContainer.GetStat(StatName.PerfectCalorieCount)) * 100f;
         }
 
-        private void LoseCalories()
+        private void CalorieDecay()
         {
             _statContainer.AddToStat(StatName.Calories,
                 -_statContainer.GetStat(StatName.EnergyConsumptionPerSecond) * Time.deltaTime);
@@ -122,5 +127,7 @@ namespace CreatureSystems
     {
         public void GainCalories(float calories);
         public float ReturnNourishment();
+
+        public void LoseCalories(float calories);
     }
 }

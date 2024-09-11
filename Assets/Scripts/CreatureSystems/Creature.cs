@@ -19,6 +19,7 @@ namespace CreatureSystems
         public const float ChompSize = 2f;
         public string speciesID;
         public CreatureType creatureType;
+        public Action OnInitialization;
 
         public float maxThirst;
 
@@ -173,6 +174,8 @@ namespace CreatureSystems
                 _predatorAwareness = GetComponent<IPredatorAwareness>();
                 StartCoroutine(_predatorAwareness.BeAware(this));
             }
+            
+            OnInitialization?.Invoke();
         }
 
         private void OnDestroy()

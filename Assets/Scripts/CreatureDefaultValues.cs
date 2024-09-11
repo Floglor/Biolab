@@ -30,6 +30,7 @@ namespace Stats
         public float MaxReproductionNeed = 100f;
         public float ReproductionNeedDecay = 0.2f;
         public float PerfectCalorieCount = 200f;
+        public float ReproductionCalorieShare = 40f;
 
         private const float CaloriesPerKg = 77f; // 1 kg of weight ~ 7700 calories
         private const float DailyCaloricExpenditure = 25f; // Example: 2500 calories/day for maintenance
@@ -57,6 +58,8 @@ namespace Stats
                 [StatName.HungerDecayInterval] = new SimpleStat(HungerDecayInterval),
                 [StatName.ReproductionNeedDecay] = new SimpleStat(ReproductionNeedDecay),
                 [StatName.PerfectCalorieCount] = new SimpleStat(PerfectCalorieCount),
+                [StatName.ReproductionCalorieShare] = new SimpleStat(ReproductionCalorieShare),
+
             };
 
             statsDictionary[StatName.BaseSpeed] = new DerivedStat(() =>

@@ -19,6 +19,8 @@
         ReproductionNeedThreshold,
         ReproductionNeedDecay,
         ReproductionNeed,
+        ReproductionNeedThresholdPercentage,
+        ReproductionCalorieShare,
         EyeSight,
         EatingSpeed,
         IsMale,
