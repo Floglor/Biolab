@@ -14,7 +14,7 @@ namespace Stats
         public float BaseSpeedFactor = 2.0f;
         public float RunSpeedMultiplier = 1.0f;
         public float SprintSpeedMultiplier = 1.5f;
-        public float EnergyConsumptionMultiplier = 1.0f;
+        public float EnergyConsumptionMultiplier = 0.0005f;
         public float StartingCalories = 20000f;
         public float MaxCalorieCount;
         public float MetabolismRatePerSec;
@@ -34,6 +34,7 @@ namespace Stats
 
         private const float CaloriesPerKg = 77f; // 1 kg of weight ~ 7700 calories
         private const float DailyCaloricExpenditure = 25f; // Example: 2500 calories/day for maintenance
+        
 
      // public void OnEnable()
      // {
@@ -75,10 +76,8 @@ namespace Stats
                 statsDictionary[StatName.BaseSpeed].Value * SprintSpeedMultiplier
             );
 
-            statsDictionary[StatName.EnergyConsumptionPerSecond] = new DerivedStat(() =>
-                EnergyConsumptionMultiplier *
-                ((statsDictionary[StatName.Weight].Value + statsDictionary[StatName.Power].Value) * 0.001f)
-            );
+            statsDictionary[StatName.EnergyConsumptionPerSecond] = new DerivedStat(() => EnergyConsumptionMultiplier *
+                (statsDictionary[StatName.Weight].Value + statsDictionary[StatName.Power].Value));
 
             statsDictionary[StatName.Hunger] = new StatWithMax(Hunger, MaxHunger);
             statsDictionary[StatName.Thirst] = new StatWithMax(Thirst, MaxThirst);

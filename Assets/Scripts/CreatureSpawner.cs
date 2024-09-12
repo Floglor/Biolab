@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Ai;
 using CreatureSystems;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Zenject;
+using Random = UnityEngine.Random;
 
 
 public enum CreatureType
@@ -32,6 +34,13 @@ public class CreatureSpawner : MonoBehaviour
 
     private Tilemap _freeSpaceTiles;
 
+    [SerializeField] private bool _isPlayingFromEditor;
+    [SerializeField] private int _carnivoreNumber;
+    [SerializeField] private int _herbivoreNumber;
+    [SerializeField] private bool _isTestingCarnivore;
+    
+
+
     [Inject]
     private void Construct(Tilemap freeSpaceTilemap)
     {
@@ -50,19 +59,31 @@ public class CreatureSpawner : MonoBehaviour
     {
         if (!_isTestingSingularSpawn)
         {
-            _gameConfigValues = new GameConfigValues
+            if (_isPlayingFromEditor)
             {
-                CarnivoresNumber = PlayerPrefs.GetInt(Config.CarnivoresNumber.ToString()),
-                HerbivoresNumber = PlayerPrefs.GetInt(Config.HerbivoresNumber.ToString()),
-                MutationModifier = PlayerPrefs.GetFloat(Config.MutationModifier.ToString())
-            };
+                _gameConfigValues = new GameConfigValues
+                {
+                    CarnivoresNumber = _carnivoreNumber,
+                    HerbivoresNumber = _herbivoreNumber,
+                    MutationModifier = PlayerPrefs.GetFloat(Config.MutationModifier.ToString())
+                };
+            }
+            else
+            {
+                _gameConfigValues = new GameConfigValues
+                {
+                    CarnivoresNumber = PlayerPrefs.GetInt(Config.CarnivoresNumber.ToString()),
+                    HerbivoresNumber = PlayerPrefs.GetInt(Config.HerbivoresNumber.ToString()),
+                    MutationModifier = PlayerPrefs.GetFloat(Config.MutationModifier.ToString())
+                };
+            }
         }
         else
         {
             _gameConfigValues = new GameConfigValues
             {
-                CarnivoresNumber = 0,
-                HerbivoresNumber = 1,
+                CarnivoresNumber = Convert.ToInt32(_isTestingCarnivore),
+                HerbivoresNumber = Convert.ToInt32(!_isTestingCarnivore),
                 MutationModifier = PlayerPrefs.GetFloat(Config.MutationModifier.ToString())
             };
         }

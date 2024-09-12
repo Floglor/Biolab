@@ -27,7 +27,7 @@ MonoBehaviour:
   BaseSpeedFactor: 1
   RunSpeedMultiplier: 1
   SprintSpeedMultiplier: 1.5
-  EnergyConsumptionMultiplier: 1
+  EnergyConsumptionMultiplier: 0.0005
   StartingCalories: 200
   MaxCalorieCount: 5390
   MetabolismRatePerSec: 0.5
@@ -43,3 +43,4 @@ MonoBehaviour:
   MaxReproductionNeed: 100
   ReproductionNeedDecay: 0.2
   PerfectCalorieCount: 200
+  ReproductionCalorieShare: 40

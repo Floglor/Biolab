@@ -1,6 +1,7 @@
 ﻿using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GlobalValues : MonoBehaviour
 {
@@ -32,11 +33,12 @@ public class GlobalValues : MonoBehaviour
 
     [BoxGroup("Needs Satisfaction")] public float basicNeedHighThreshold;
     [BoxGroup("Needs Satisfaction")] public float basicNeedLowThreshold;
-    [BoxGroup("Needs Satisfaction")] public float matingNeedHighTreshold;
+    [FormerlySerializedAs("matingNeedHighTreshold")] [BoxGroup("Needs Satisfaction")] public float matingNeedHighThreshold;
     [BoxGroup("Needs Satisfaction")] public float maxHungerDeathThreshold;
     [BoxGroup("Needs Satisfaction")] public float maxThirstDeathThreshold;
     [BoxGroup("Needs Satisfaction")] public float minHuntDecisionHungerThreshold;
-    
+    [BoxGroup("Needs Satisfaction")] public float lowNourishmentThreshold;
+
     [BoxGroup("Weight")] public float minimumWeightThreshold;
     [BoxGroup("Weight")] public float weightToCalorieRatio;
 
@@ -47,7 +49,6 @@ public class GlobalValues : MonoBehaviour
     [BoxGroup("Other")] public int MaxCreaturesOnTile;
 
     public GameObject debugObj;
-
 
 
     private void Awake()

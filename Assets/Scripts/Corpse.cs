@@ -27,7 +27,11 @@ public class Corpse : MonoBehaviour
     public bool GetEaten(float chompSize, Vector3 position)
     {
         if (Vector3.Distance(position, transform.position) >= Creature.EatingRange) return false;
-        if (size <= Creature.ChompSize) return false;
+        if (size <= Creature.ChompSize)
+        {
+            CheckForPerish();
+            return false;
+        }
 
         size -= chompSize;
         CheckForPerish();

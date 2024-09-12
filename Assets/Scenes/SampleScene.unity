@@ -36177,7 +36177,11 @@ MonoBehaviour:
   creaturePrefabs:
   - {fileID: 1650760892521877860, guid: ceb476808ff984a40aa2c78edd8d18b5, type: 3}
   - {fileID: 1650760892521877860, guid: f01beaf7d177fcc4ea49138b187b8929, type: 3}
-  _isTestingSingularSpawn: 1
+  _isTestingSingularSpawn: 0
+  _isPlayingFromEditor: 1
+  _carnivoreNumber: 5
+  _herbivoreNumber: 25
+  _isTestingCarnivore: 0
 --- !u!114 &1282647072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38080,10 +38084,11 @@ MonoBehaviour:
   calmDownFromChaseDelay: 0
   basicNeedHighThreshold: 70
   basicNeedLowThreshold: 10
-  matingNeedHighTreshold: 60
+  matingNeedHighThreshold: 60
   maxHungerDeathThreshold: 100
   maxThirstDeathThreshold: 100
   minHuntDecisionHungerThreshold: 30
+  lowNourishmentThreshold: 40
   minimumWeightThreshold: 0.2
   weightToCalorieRatio: 20
   corpseMaxAge: 1500

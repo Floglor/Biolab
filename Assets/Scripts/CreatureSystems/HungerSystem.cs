@@ -65,6 +65,7 @@ namespace CreatureSystems
             if ((hunger >= MAX_HUNGER || thirst >= MAX_HUNGER) && _timeSinceLastDecay >= _decayInterval)
             {
                 PerformDeathCheck();
+                _statContainer.AddToStat(StatName.Hunger, -_statContainer.GetStat(StatName.Hunger));
                 _hungerDC = Math.Max(1, _hungerDC - 1);
                 _timeSinceLastDecay = 0f;
             }

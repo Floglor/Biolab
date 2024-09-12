@@ -133,7 +133,9 @@ namespace CreatureSystems
 
             string creatureName = selectedNames[Random.Range(0, selectedNames.Length)];
 
-            gameObject.name = creatureName;
+            string isHerbivoreString = (isHerbivore) ? "(Herbivore)" : "(Carnivore)";
+
+            gameObject.name = $"{creatureName} {isHerbivoreString}";
         }
         protected void Start()
         {
