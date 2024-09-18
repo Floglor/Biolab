@@ -47,6 +47,7 @@ public class GlobalValues : MonoBehaviour
     [BoxGroup("Other")] public float runningThirstDecay;
     [BoxGroup("Other")] public float runningSpeedMultiplier;
     [BoxGroup("Other")] public int MaxCreaturesOnTile;
+    [BoxGroup("Other")] public float corpseSizeMultiplier;
 
     public GameObject debugObj;
 

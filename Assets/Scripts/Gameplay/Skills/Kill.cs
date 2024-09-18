@@ -6,20 +6,27 @@ namespace Gameplay.Skills
 {
     public class Kill : Skill
     {
+        public float radius = 0.5f;  
+
         public override bool TakeEffect(Vector3 clickCoordinates)
         {
-            Debug.Log($"Killing creature at ({clickCoordinates.x}, {clickCoordinates.y}");
+            Debug.Log($"Killing creatures within radius at ({clickCoordinates.x}, {clickCoordinates.y})");
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(clickCoordinates, radius);
+            bool creatureKilled = false;
 
-            if (hit.collider != null && hit.collider.GetComponent<Creature>() != null)
+            foreach (Collider2D overlapCollider in colliders)
             {
-                hit.collider.GetComponent<Creature>().Die();
-                return true;
+                Creature creature = overlapCollider.GetComponent<Creature>();
+                
+                if (creature == null) continue;
+                
+                creature.Die();  
+                creatureKilled = true;
             }
 
-            return false;
+            return creatureKilled;
         }
+        
     }
 }

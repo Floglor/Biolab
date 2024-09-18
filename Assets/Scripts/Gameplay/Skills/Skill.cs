@@ -7,5 +7,6 @@ namespace Gameplay.Skills
         public int Cost;
         public string Name;
         public abstract bool TakeEffect(Vector3 clickCoordinates);
+        public GameObject EffectGO;
     }
 }

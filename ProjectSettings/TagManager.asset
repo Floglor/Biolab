@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Creature
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - 
   - 
   - Obstacle
-  - 
+  - Overlay
   - 
   - 
   - 
@@ -49,6 +50,9 @@ TagManager:
     locked: 0
   - name: Creatures
     uniqueID: 2623308233
+    locked: 0
+  - name: Effects
+    uniqueID: 3860430543
     locked: 0
   - name: UI
     uniqueID: 3290837601

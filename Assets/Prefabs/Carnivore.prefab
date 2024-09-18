@@ -311,6 +311,7 @@ MonoBehaviour:
   speciesID: foxy
   creatureType: 0
   maxThirst: 0
+  reproductionNeed: 0
   startEyesight: 0
   eyesight: 0
   startEatingSpeed: 0.3
@@ -895,7 +896,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8138725730830622902
 MonoBehaviour:
   m_ObjectHideFlags: 0

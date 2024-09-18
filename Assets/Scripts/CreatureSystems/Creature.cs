@@ -259,7 +259,7 @@ namespace CreatureSystems
 
         public float ReturnCorpseSize()
         {
-            return GetStats.GetStat(StatName.Calories)/2;
+            return GetStats.GetStat(StatName.Calories)*GlobalValues.Instance.corpseSizeMultiplier;
         }
     }
 }
