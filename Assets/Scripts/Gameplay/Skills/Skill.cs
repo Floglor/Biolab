@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Gameplay.Skills
 {
@@ -8,5 +9,12 @@ namespace Gameplay.Skills
         public string Name;
         public abstract bool TakeEffect(Vector3 clickCoordinates);
         public GameObject EffectGO;
+
+        private void Start()
+        {
+            if (EffectGO == null) return;
+            EffectGO = Instantiate(EffectGO);
+            EffectGO.SetActive(false);
+        }
     }
 }

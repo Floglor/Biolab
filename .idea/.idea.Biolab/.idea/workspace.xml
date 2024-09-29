@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatureDefaultValues.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.silicon-heart.line-renderer-2d@4b13a889fb/Runtime/Scripts/MultiLineRenderer2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/18652b5914b14e07a74076a4608f13e36a00/c5/e4b882b3/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stats/Genetics/ChromosomePair.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/Creature.cs" root0="FORCE_HIGHLIGHTING" />
@@ -96,17 +97,30 @@
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/CreatureSystems/HungerSystem.cs</url>
-          <line>42</line>
-          <properties documentPath="C:\Biolab\Assets\Scripts\CreatureSystems\HungerSystem.cs" initialLine="43" containingFunctionPresentation="method 'HungerDecay'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Skills/MouseSnapping.cs</url>
+          <line>11</line>
+          <properties documentPath="C:\Biolab\Assets\Scripts\Gameplay\Skills\MouseSnapping.cs" initialLine="11" containingFunctionPresentation="method 'StartSnapping'">
             <startOffsets>
-              <option value="1362" />
+              <option value="269" />
             </startOffsets>
             <endOffsets>
-              <option value="1430" />
+              <option value="324" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="27" />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Skills/SkillHolder.cs</url>
+          <line>62</line>
+          <properties documentPath="C:\Biolab\Assets\Scripts\Gameplay\Skills\SkillHolder.cs" initialLine="62" containingFunctionPresentation="method 'ChargeSkill'">
+            <startOffsets>
+              <option value="1556" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1591" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
